@@ -77,12 +77,8 @@ FindFood is an app that makes it easy to find the location of food trucks near y
    * Can click profile photo on Details Screen that takes user to the Profile Screen
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
+https://www.figma.com/file/c7HaAJtrsg89o7IXk4c6TA/findfood?node-id=0%3A1
+<img width="1240" alt="Screen Shot 2021-07-09 at 3 31 52 PM" src="https://user-images.githubusercontent.com/65196174/125133033-d5ce1300-e0ca-11eb-97ff-5ddbdf5314e8.png">
 
 ## Schema 
 [This section will be completed in Unit 9]
