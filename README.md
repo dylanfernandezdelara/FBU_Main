@@ -81,10 +81,44 @@ https://www.figma.com/file/c7HaAJtrsg89o7IXk4c6TA/findfood?node-id=0%3A1
 <img width="1240" alt="Screen Shot 2021-07-09 at 3 31 52 PM" src="https://user-images.githubusercontent.com/65196174/125133033-d5ce1300-e0ca-11eb-97ff-5ddbdf5314e8.png">
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+Model: Post - Food Truck
+| Property | Type  | Description  |
+| :---:   | :-: | :-: |
+| objectId | String | unique id for the food truck posting |
+| author | Pointer to user | author id |
+| author type | String | business classification |
+| profileImage | File | food truck pfp |
+| foodImage | File | details view main photo |
+| linkToWebsite | String | link to food truck website if exists |
+| location | String | unsure right now of how to save this type |
+| weeklyHoursOpen | DateTime | unsure right now of how to save this type |
+| rating | Number | average rating of reviews |
+
+Model: Post - Food Truck
+| Property | Type  | Description  |
+| :---:   | :-: | :-: |
+| objectId | String | unique id for the user account |
+| author | Pointer to user | author id |
+| author type | String | consumer classification |
+| profileImage | File | user pfp |
+| ratings | Number | all reviews left by user |
+
+
+Model: Review
+| Property | Type  | Description  |
+| :---:   | :-: | :-: |
+| objectId | String | unique id for the review |
+| author | Pointer to user | author id |
+| rating | Number | review score by user |
+| caption | String | written review |
+
 ### Networking
-- [Add list of network requests by screen ]
+| CRUD | HTTP Verb  | Example  |
+| :---:   | :-: | :-: |
+| Create | POST | Create a new food truck |
+| Read | GET | Fetch food trucks near a user's location |
+| Update | PUT | Changing a user's profile picture or unfavoriting a food truck |
+| Delete | DELETE | Deleting a review |
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
