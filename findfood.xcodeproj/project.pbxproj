@@ -3,19 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4EAF2A750D757227461207 /* Pods_findfood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5F6210BCDD145B07CB00E /* Pods_findfood.framework */; };
+		30841397540F088A9513BF71 /* Pods_findfoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE33F21BAA7B6C3747F874A /* Pods_findfoodTests.framework */; };
 		6E01E12E269CF8CB00CAB045 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E12D269CF8CB00CAB045 /* AppDelegate.m */; };
 		6E01E131269CF8CB00CAB045 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E130269CF8CB00CAB045 /* SceneDelegate.m */; };
-		6E01E134269CF8CB00CAB045 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E133269CF8CB00CAB045 /* ViewController.m */; };
 		6E01E137269CF8CB00CAB045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E01E135269CF8CB00CAB045 /* Main.storyboard */; };
 		6E01E139269CF8CC00CAB045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E01E138269CF8CC00CAB045 /* Assets.xcassets */; };
 		6E01E13C269CF8CC00CAB045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E01E13A269CF8CC00CAB045 /* LaunchScreen.storyboard */; };
 		6E01E13F269CF8CC00CAB045 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E13E269CF8CC00CAB045 /* main.m */; };
 		6E01E149269CF8CC00CAB045 /* findfoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E148269CF8CC00CAB045 /* findfoodTests.m */; };
 		6E01E154269CF8CC00CAB045 /* findfoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E153269CF8CC00CAB045 /* findfoodUITests.m */; };
+		6E182D10269CFF1600E69EBD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D0F269CFF1600E69EBD /* LoginViewController.m */; };
+		6E182D13269D030200E69EBD /* UserSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D12269D030200E69EBD /* UserSignUpViewController.m */; };
+		6E182D16269D035200E69EBD /* FTruckSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D15269D035200E69EBD /* FTruckSignUpViewController.m */; };
+		6E182D19269D0A6C00E69EBD /* ParentSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D18269D0A6C00E69EBD /* ParentSignUpViewController.m */; };
+		CCFE10EF9BBE638A5B164149 /* Pods_findfood_findfoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28E5C561B8F67A6A7F7FAD4E /* Pods-findfood-findfoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfood-findfoodUITests.debug.xcconfig"; path = "Target Support Files/Pods-findfood-findfoodUITests/Pods-findfood-findfoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F7040CD10C4FED86B930B57 /* Pods-findfoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfoodTests.debug.xcconfig"; path = "Target Support Files/Pods-findfoodTests/Pods-findfoodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		529B2061D7F24A244C17548E /* Pods-findfood-findfoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfood-findfoodUITests.release.xcconfig"; path = "Target Support Files/Pods-findfood-findfoodUITests/Pods-findfood-findfoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E01E129269CF8CB00CAB045 /* findfood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = findfood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E01E12C269CF8CB00CAB045 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E01E12D269CF8CB00CAB045 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6E01E12F269CF8CB00CAB045 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		6E01E130269CF8CB00CAB045 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		6E01E132269CF8CB00CAB045 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6E01E133269CF8CB00CAB045 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6E01E136269CF8CB00CAB045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E01E138269CF8CC00CAB045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E01E13B269CF8CC00CAB045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +61,20 @@
 		6E01E14F269CF8CC00CAB045 /* findfoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = findfoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E01E153269CF8CC00CAB045 /* findfoodUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = findfoodUITests.m; sourceTree = "<group>"; };
 		6E01E155269CF8CC00CAB045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E182D0E269CFF1600E69EBD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6E182D0F269CFF1600E69EBD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6E182D11269D030200E69EBD /* UserSignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSignUpViewController.h; sourceTree = "<group>"; };
+		6E182D12269D030200E69EBD /* UserSignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserSignUpViewController.m; sourceTree = "<group>"; };
+		6E182D14269D035200E69EBD /* FTruckSignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTruckSignUpViewController.h; sourceTree = "<group>"; };
+		6E182D15269D035200E69EBD /* FTruckSignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTruckSignUpViewController.m; sourceTree = "<group>"; };
+		6E182D17269D0A6C00E69EBD /* ParentSignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentSignUpViewController.h; sourceTree = "<group>"; };
+		6E182D18269D0A6C00E69EBD /* ParentSignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentSignUpViewController.m; sourceTree = "<group>"; };
+		77D5F6210BCDD145B07CB00E /* Pods_findfood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA575DA0E14924867ED1A07 /* Pods-findfood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfood.debug.xcconfig"; path = "Target Support Files/Pods-findfood/Pods-findfood.debug.xcconfig"; sourceTree = "<group>"; };
+		9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfood_findfoodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FF123623A9EC0152534D02 /* Pods-findfood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfood.release.xcconfig"; path = "Target Support Files/Pods-findfood/Pods-findfood.release.xcconfig"; sourceTree = "<group>"; };
+		ACE33F21BAA7B6C3747F874A /* Pods_findfoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8851B3329059D044BCBC1B5 /* Pods-findfoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfoodTests.release.xcconfig"; path = "Target Support Files/Pods-findfoodTests/Pods-findfoodTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4EAF2A750D757227461207 /* Pods_findfood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30841397540F088A9513BF71 /* Pods_findfoodTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFE10EF9BBE638A5B164149 /* Pods_findfood_findfoodUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +112,8 @@
 				6E01E147269CF8CC00CAB045 /* findfoodTests */,
 				6E01E152269CF8CC00CAB045 /* findfoodUITests */,
 				6E01E12A269CF8CB00CAB045 /* Products */,
+				F6860794216974774ECCF1BC /* Pods */,
+				A050D7899DB07366C952C449 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,12 +130,13 @@
 		6E01E12B269CF8CB00CAB045 /* findfood */ = {
 			isa = PBXGroup;
 			children = (
+				6E182D0D269CFE9F00E69EBD /* Models */,
+				6E182D0C269CFE9400E69EBD /* Views */,
+				6E182D0B269CFE8100E69EBD /* View Controllers */,
 				6E01E12C269CF8CB00CAB045 /* AppDelegate.h */,
 				6E01E12D269CF8CB00CAB045 /* AppDelegate.m */,
 				6E01E12F269CF8CB00CAB045 /* SceneDelegate.h */,
 				6E01E130269CF8CB00CAB045 /* SceneDelegate.m */,
-				6E01E132269CF8CB00CAB045 /* ViewController.h */,
-				6E01E133269CF8CB00CAB045 /* ViewController.m */,
 				6E01E135269CF8CB00CAB045 /* Main.storyboard */,
 				6E01E138269CF8CC00CAB045 /* Assets.xcassets */,
 				6E01E13A269CF8CC00CAB045 /* LaunchScreen.storyboard */,
@@ -137,6 +164,58 @@
 			path = findfoodUITests;
 			sourceTree = "<group>";
 		};
+		6E182D0B269CFE8100E69EBD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E182D0E269CFF1600E69EBD /* LoginViewController.h */,
+				6E182D0F269CFF1600E69EBD /* LoginViewController.m */,
+				6E182D11269D030200E69EBD /* UserSignUpViewController.h */,
+				6E182D12269D030200E69EBD /* UserSignUpViewController.m */,
+				6E182D14269D035200E69EBD /* FTruckSignUpViewController.h */,
+				6E182D15269D035200E69EBD /* FTruckSignUpViewController.m */,
+				6E182D17269D0A6C00E69EBD /* ParentSignUpViewController.h */,
+				6E182D18269D0A6C00E69EBD /* ParentSignUpViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6E182D0C269CFE9400E69EBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E182D0D269CFE9F00E69EBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A050D7899DB07366C952C449 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77D5F6210BCDD145B07CB00E /* Pods_findfood.framework */,
+				9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */,
+				ACE33F21BAA7B6C3747F874A /* Pods_findfoodTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6860794216974774ECCF1BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FA575DA0E14924867ED1A07 /* Pods-findfood.debug.xcconfig */,
+				A0FF123623A9EC0152534D02 /* Pods-findfood.release.xcconfig */,
+				28E5C561B8F67A6A7F7FAD4E /* Pods-findfood-findfoodUITests.debug.xcconfig */,
+				529B2061D7F24A244C17548E /* Pods-findfood-findfoodUITests.release.xcconfig */,
+				2F7040CD10C4FED86B930B57 /* Pods-findfoodTests.debug.xcconfig */,
+				B8851B3329059D044BCBC1B5 /* Pods-findfoodTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E01E158269CF8CC00CAB045 /* Build configuration list for PBXNativeTarget "findfood" */;
 			buildPhases = (
+				5A47EC4E7DCE9004AC5E07CC /* [CP] Check Pods Manifest.lock */,
 				6E01E125269CF8CB00CAB045 /* Sources */,
 				6E01E126269CF8CB00CAB045 /* Frameworks */,
 				6E01E127269CF8CB00CAB045 /* Resources */,
+				E254DEEBE00F26E28A628A35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +242,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E01E15B269CF8CC00CAB045 /* Build configuration list for PBXNativeTarget "findfoodTests" */;
 			buildPhases = (
+				AE8117054734B8FEF1FE452C /* [CP] Check Pods Manifest.lock */,
 				6E01E140269CF8CC00CAB045 /* Sources */,
 				6E01E141269CF8CC00CAB045 /* Frameworks */,
 				6E01E142269CF8CC00CAB045 /* Resources */,
@@ -179,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E01E15E269CF8CC00CAB045 /* Build configuration list for PBXNativeTarget "findfoodUITests" */;
 			buildPhases = (
+				6B12B3B44E1647737C432757 /* [CP] Check Pods Manifest.lock */,
 				6E01E14B269CF8CC00CAB045 /* Sources */,
 				6E01E14C269CF8CC00CAB045 /* Frameworks */,
 				6E01E14D269CF8CC00CAB045 /* Resources */,
+				0601E31B9776E7A3B6425E3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,15 +345,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0601E31B9776E7A3B6425E3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-findfood-findfoodUITests/Pods-findfood-findfoodUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-findfood-findfoodUITests/Pods-findfood-findfoodUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-findfood-findfoodUITests/Pods-findfood-findfoodUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A47EC4E7DCE9004AC5E07CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-findfood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B12B3B44E1647737C432757 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-findfood-findfoodUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE8117054734B8FEF1FE452C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-findfoodTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E254DEEBE00F26E28A628A35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-findfood/Pods-findfood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-findfood/Pods-findfood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-findfood/Pods-findfood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E01E125269CF8CB00CAB045 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E01E134269CF8CB00CAB045 /* ViewController.m in Sources */,
+				6E182D10269CFF1600E69EBD /* LoginViewController.m in Sources */,
+				6E182D13269D030200E69EBD /* UserSignUpViewController.m in Sources */,
 				6E01E12E269CF8CB00CAB045 /* AppDelegate.m in Sources */,
 				6E01E13F269CF8CC00CAB045 /* main.m in Sources */,
+				6E182D19269D0A6C00E69EBD /* ParentSignUpViewController.m in Sources */,
 				6E01E131269CF8CB00CAB045 /* SceneDelegate.m in Sources */,
+				6E182D16269D035200E69EBD /* FTruckSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +628,7 @@
 		};
 		6E01E159269CF8CC00CAB045 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FA575DA0E14924867ED1A07 /* Pods-findfood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +647,7 @@
 		};
 		6E01E15A269CF8CC00CAB045 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0FF123623A9EC0152534D02 /* Pods-findfood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +666,7 @@
 		};
 		6E01E15C269CF8CC00CAB045 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7040CD10C4FED86B930B57 /* Pods-findfoodTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +687,7 @@
 		};
 		6E01E15D269CF8CC00CAB045 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8851B3329059D044BCBC1B5 /* Pods-findfoodTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -514,6 +708,7 @@
 		};
 		6E01E15F269CF8CC00CAB045 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28E5C561B8F67A6A7F7FAD4E /* Pods-findfood-findfoodUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M35Y5F744J;
@@ -532,6 +727,7 @@
 		};
 		6E01E160269CF8CC00CAB045 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 529B2061D7F24A244C17548E /* Pods-findfood-findfoodUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M35Y5F744J;

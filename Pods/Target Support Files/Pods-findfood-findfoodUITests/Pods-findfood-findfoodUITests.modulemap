@@ -1,0 +1,6 @@
+framework module Pods_findfood_findfoodUITests {
+  umbrella header "Pods-findfood-findfoodUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
