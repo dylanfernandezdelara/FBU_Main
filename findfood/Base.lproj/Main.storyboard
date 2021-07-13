@@ -28,7 +28,7 @@
                                 <state key="normal" title="sign up"/>
                                 <connections>
                                     <action selector="signUpNow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jV5-6q-CfD"/>
-                                    <segue destination="abb-Fn-PZ0" kind="show" id="qxD-Kc-j2K"/>
+                                    <segue destination="abb-Fn-PZ0" kind="presentation" identifier="signupSegue" id="Yl6-aF-AAW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SiD-qQ-qGK">
