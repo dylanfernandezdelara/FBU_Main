@@ -1,25 +1,21 @@
 //
-//  UserSignUpViewController.m
+//  DetailsViewController.m
 //  findfood
 //
-//  Created by dylanfdl on 7/12/21.
+//  Created by dylanfdl on 7/13/21.
 //
 
-#import "UserSignUpViewController.h"
+#import "DetailsViewController.h"
 
-@interface UserSignUpViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@interface DetailsViewController ()
 
 @end
 
-@implementation UserSignUpViewController
+@implementation DetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (IBAction)saveNow:(UIButton *)sender {
 }
 
 /*
