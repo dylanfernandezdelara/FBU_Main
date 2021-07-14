@@ -323,7 +323,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yZv-tw-Zt4">
             <objects>
-                <tabBarController id="PVl-bq-PCQ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="foodTruckTabController" id="PVl-bq-PCQ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LES-Th-Fex"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="843-Wr-vYH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -533,7 +533,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6kO-F8-UPF">
             <objects>
-                <tabBarController id="34W-ni-AGm" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="userTabController" id="34W-ni-AGm" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pDm-Tc-FJZ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tPQ-4z-dBx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
