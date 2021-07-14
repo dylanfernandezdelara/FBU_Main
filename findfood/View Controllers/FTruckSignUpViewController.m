@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (nonatomic) bool enabled;
 
 @end
 
@@ -36,7 +37,9 @@
     currUser[@"Image"] = image;
     [[PFUser currentUser] saveInBackground];
 }
+
 - (IBAction)selectProfilePhotoNow:(UIButton *)sender {
+    self.enabled = true;
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
@@ -49,7 +52,9 @@
     }
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
+
 - (IBAction)selectDetailsPhotoNow:(UIButton *)sender {
+    self.enabled = false;
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
@@ -67,7 +72,12 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     CGSize temp_size = CGSizeMake(600, 600);
     UIImage *temp = [self resizeImage:editedImage withSize:temp_size];
-    [self.profilePhotoButton setImage:temp forState:UIControlStateNormal];
+    if (self.enabled == true){
+        [self.profilePhotoButton setImage:temp forState:UIControlStateNormal];
+    }
+    else if (self.enabled == false){
+        [self.detailsPhotoButton setImage:temp forState:UIControlStateNormal];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

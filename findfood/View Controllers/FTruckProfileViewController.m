@@ -1,20 +1,20 @@
 //
-//  UserProfileViewController.m
+//  FTruckProfileViewController.m
 //  findfood
 //
-//  Created by dylanfdl on 7/13/21.
+//  Created by dylanfdl on 7/14/21.
 //
 
-#import "UserProfileViewController.h"
+#import "FTruckProfileViewController.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 
-@interface UserProfileViewController ()
+@interface FTruckProfileViewController ()
 
 @end
 
-@implementation UserProfileViewController
+@implementation FTruckProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
