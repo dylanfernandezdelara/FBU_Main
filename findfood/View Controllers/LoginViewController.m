@@ -39,6 +39,22 @@
 }
 
 - (IBAction)loginNow:(UIButton *)sender {
+    NSString *username = self.username.text;
+    NSString *password = self.password.text;
+    
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged in successfully");
+            if ([@"FoodTruck" isEqualToString: user[@"userType"]]){
+                [self performSegueWithIdentifier:@"loginFoodTruck" sender:nil];
+            }
+            else if([@"generalUser" isEqualToString:user[@"userType"]]){
+                [self performSegueWithIdentifier:@"loginGeneralUser" sender:nil];
+            }
+        }
+    }];
 }
 
 /*

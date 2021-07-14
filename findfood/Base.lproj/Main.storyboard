@@ -54,11 +54,13 @@
                         <outlet property="password" destination="0tZ-UK-Iwv" id="U9p-Di-dYw"/>
                         <outlet property="signUpButton" destination="D32-EI-eTI" id="fRN-bk-G1b"/>
                         <outlet property="username" destination="SiD-qQ-qGK" id="fIr-TU-kSc"/>
+                        <segue destination="PVl-bq-PCQ" kind="show" identifier="loginFoodTruck" id="Hnp-Op-8XX"/>
+                        <segue destination="34W-ni-AGm" kind="show" identifier="loginGeneralUser" id="ukn-VW-UhU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+            <point key="canvasLocation" x="-69" y="68"/>
         </scene>
         <!--Parent Sign Up View Controller-->
         <scene sceneID="7Ax-Fy-Kfq">
@@ -257,7 +259,7 @@
             <objects>
                 <viewController id="bBa-HE-0dN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KUd-CO-a9y">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="view profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIs-e0-h5M">
@@ -290,7 +292,7 @@
             <objects>
                 <viewController id="hOW-69-2KH" customClass="FTruckEditProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xco-o9-C1B">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="edit profile ftruck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRe-9X-k2T">
@@ -401,7 +403,7 @@
             <objects>
                 <viewController id="cQG-EL-TPA" customClass="UserProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wPb-hk-vpq">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH0-Zr-KZ3">
@@ -434,7 +436,7 @@
             <objects>
                 <viewController id="bBQ-Kj-YjP" customClass="UserEditProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAz-rB-uni">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="edit profile user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUf-4X-pDZ">
@@ -459,7 +461,7 @@
             <objects>
                 <viewController id="fgQ-Ag-GQ5" customClass="UserMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W8b-gY-1qL">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-3L-JZR">
@@ -492,7 +494,7 @@
             <objects>
                 <viewController id="ATM-rS-mmT" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A6d-eD-r3W">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="detail view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaD-mn-ybU">
@@ -532,6 +534,10 @@
             <point key="canvasLocation" x="3194" y="-632"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ukn-VW-UhU"/>
+        <segue reference="Hnp-Op-8XX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
