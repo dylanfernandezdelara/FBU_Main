@@ -7,12 +7,14 @@
 
 #import "LocationSearchViewController.h"
 #import "Mapkit/Mapkit.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface LocationSearchViewController ()<MKLocalSearchCompleterDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface LocationSearchViewController ()<MKLocalSearchCompleterDelegate, UISearchBarDelegate, UISearchDisplayDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) MKLocalSearchCompleter *completer;
 @property(nonatomic, readonly, strong) NSArray <MKLocalSearchCompletion *> *results;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic)  CLLocationManager *locationManager;
 
 @end
 
@@ -20,10 +22,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+             [self.locationManager requestWhenInUseAuthorization];
+         }
+    [self.locationManager startUpdatingLocation];
+    
     self.searchBar.delegate = self;
     self.completer = [[MKLocalSearchCompleter alloc] init];
     self.completer.delegate = self;
     self.completer.filterType = MKSearchCompletionFilterTypeLocationsAndQueries;
+    // self.completer.region =
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+
+    [self.locationManager stopUpdatingLocation];
+    CGFloat usersLatitude = self.locationManager.location.coordinate.latitude;
+    CGFloat usersLongidute = self.locationManager.location.coordinate.longitude;
+    NSLog(@"%f, %f", usersLatitude, usersLongidute);
 }
 
 - (void) completerDidUpdateResults:(MKLocalSearchCompleter *)completer {
