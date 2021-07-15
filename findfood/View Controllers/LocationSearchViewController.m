@@ -8,13 +8,15 @@
 #import "LocationSearchViewController.h"
 #import "Mapkit/Mapkit.h"
 #import <CoreLocation/CoreLocation.h>
+#import "AddressResultsCell.h"
 
-@interface LocationSearchViewController ()<MKLocalSearchCompleterDelegate, UISearchBarDelegate, UISearchDisplayDelegate, CLLocationManagerDelegate>
+@interface LocationSearchViewController ()<MKLocalSearchCompleterDelegate, UISearchBarDelegate, UISearchDisplayDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) MKLocalSearchCompleter *completer;
-@property(nonatomic, readonly, strong) NSArray <MKLocalSearchCompletion *> *results;
+@property(nonatomic, strong) NSArray <MKLocalSearchCompletion *> *results;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic)  CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -32,12 +37,10 @@
              [self.locationManager requestWhenInUseAuthorization];
          }
     [self.locationManager startUpdatingLocation];
-    
     self.searchBar.delegate = self;
     self.completer = [[MKLocalSearchCompleter alloc] init];
     self.completer.delegate = self;
     self.completer.filterType = MKSearchCompletionFilterTypeLocationsAndQueries;
-    // self.completer.region =
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
@@ -45,13 +48,18 @@
     [self.locationManager stopUpdatingLocation];
     CGFloat usersLatitude = self.locationManager.location.coordinate.latitude;
     CGFloat usersLongidute = self.locationManager.location.coordinate.longitude;
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(usersLatitude, usersLongidute);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 500, 500);
+    self.completer.region = region;
     NSLog(@"%f, %f", usersLatitude, usersLongidute);
 }
 
 - (void) completerDidUpdateResults:(MKLocalSearchCompleter *)completer {
     for (MKLocalSearchCompletion *completion in completer.results) {
-        NSLog(@"------ %@",completion.description);
+        // NSLog(@"------ %@",completion.description);
     }
+    self.results = completer.results;
+    [self.tableView reloadData];
 }
 
 - (void) completer:(MKLocalSearchCompleter *)completer didFailWithError:(NSError *)error {
@@ -62,7 +70,7 @@
 - (void)searchBar:(UISearchBar *)searchBar
     textDidChange:(NSString *)searchText{
     self.completer.queryFragment = self.searchBar.text;
-    NSLog(@"%@", self.searchBar.text);
+    // NSLog(@"%@", self.searchBar.text);
 }
 
 /*
@@ -74,5 +82,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    AddressResultsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddressResultsCell"];
+    cell.nameAddressLabel.text = (self.results[indexPath.row]).title;
+    cell.subtitleLabel.text = (self.results[indexPath.row]).subtitle;
+    NSLog(@"%@", (self.results[indexPath.row]).title);
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.results.count;
+}
 
 @end
