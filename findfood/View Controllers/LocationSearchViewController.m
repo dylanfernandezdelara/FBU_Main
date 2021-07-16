@@ -56,33 +56,26 @@
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(usersLatitude, usersLongidute);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 500, 500);
     self.completer.region = region;
-    NSLog(@"%f, %f", usersLatitude, usersLongidute);
 }
 
 - (void) completerDidUpdateResults:(MKLocalSearchCompleter *)completer {
-    for (MKLocalSearchCompletion *completion in completer.results) {
-        // NSLog(@"------ %@",completion.description);
-    }
     self.results = completer.results;
     [self.tableView reloadData];
 }
 
 - (void) completer:(MKLocalSearchCompleter *)completer didFailWithError:(NSError *)error {
     NSLog(@"Completer failed with error: %@",error.description);
-
 }
 
 - (void)searchBar:(UISearchBar *)searchBar
     textDidChange:(NSString *)searchText{
     self.completer.queryFragment = self.searchBar.text;
-    // NSLog(@"%@", self.searchBar.text);
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     AddressResultsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddressResultsCell"];
     cell.nameAddressLabel.text = (self.results[indexPath.row]).title;
     cell.subtitleLabel.text = (self.results[indexPath.row]).subtitle;
-    // NSLog(@"%@", (self.results[indexPath.row]).title);
     return cell;
 }
 
@@ -98,18 +91,8 @@
 }
 
 - (void)getGeoInformations {
-    // #2 - This will be called during view did load.
-    NSLog(@"Inside getGeoInformations");
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     [geoCoder geocodeAddressString:self.pressedLocation completionHandler:^(NSArray* placemarks, NSError* error){
-        // This is called later, at some point after view did load is called.
-        NSLog(@"Inside completionHandler.");
-
-        if(error) {
-            NSLog(@"Error");
-            return;
-        }
-        
         CLPlacemark *placemark = [placemarks lastObject];
         NSArray *lines = placemark.addressDictionary[@"FormattedAddressLines"];
         NSString *str_latitude = [NSString stringWithFormat: @"%f", placemark.location.coordinate.latitude];
@@ -117,19 +100,13 @@
         NSString *returnAddress = [NSString stringWithFormat:@" %@, %@, %@", lines, str_latitude, str_longitude];
         PFGeoPoint *returnGeo = [PFGeoPoint geoPointWithLatitude:placemark.location.coordinate.latitude longitude:placemark.location.coordinate.longitude];
 
-        // #4 - Now we have the return address, so we can pass it to the load method.
         [self loadAddress:returnAddress];
         [self loadGeoPoint:returnGeo];
     }];
-
-    // #3 - Anything here will be called during view did load, but BEFORE the completion handler of the geocoding process is called.
-    NSLog(@"This is called third.");
 }
 
 - (void)loadAddress:(NSString*)returnAddress {
-    // #5 - this will be called last, some time after view did load is done.
     self._returnAddress = returnAddress;
-    NSLog(@"Inside load address with return address: %@", self._returnAddress);
 }
 
 - (void)loadGeoPoint:(PFGeoPoint*)returnGeoPoint {
@@ -138,7 +115,6 @@
     PFUser *currentUser = [PFUser currentUser];
     currentUser[@"truckLocation"] = self.pressedGeoPoint;
     [[PFUser currentUser] saveInBackground];
-    NSLog(@"Inside load geo informations with return geo: %@", self.pressedGeoPoint);
 }
 
 /*

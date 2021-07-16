@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (nonatomic) bool enabled;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
 
 @end
 
@@ -23,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)saveNow:(UIButton *)sender {

@@ -130,7 +130,7 @@
                                 <state key="normal" title="save"/>
                                 <connections>
                                     <action selector="saveNow:" destination="lXD-mo-mNY" eventType="touchUpInside" id="pXU-d8-NqT"/>
-                                    <segue destination="PVl-bq-PCQ" kind="show" id="rtj-UA-l1n"/>
+                                    <segue destination="NHD-Mp-a5o" kind="show" id="1ig-Ne-yGb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8V-Df-Z7n">
@@ -166,26 +166,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location (temp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAy-3n-UeY">
-                                <rect key="frame" x="61" y="691" width="121" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAy-3n-UeY">
+                                <rect key="frame" x="61" y="691" width="66" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours (temp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUk-z4-IIO">
-                                <rect key="frame" x="61" y="762" width="102" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-MV-fPK">
-                                <rect key="frame" x="61" y="791" width="269" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="description text ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dbq-pQ-JJg">
                                 <rect key="frame" x="61" y="566" width="240" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,6 +235,7 @@
                         <outlet property="detailsPhotoButton" destination="Kf1-hc-uPT" id="rX9-Cd-fbv"/>
                         <outlet property="emailField" destination="TLy-2b-s9f" id="tTZ-tK-mda"/>
                         <outlet property="foodTruckNameField" destination="b8V-Df-Z7n" id="uz6-Xs-1fO"/>
+                        <outlet property="locationButton" destination="ohl-Na-Awi" id="EeN-rO-pD7"/>
                         <outlet property="profilePhotoButton" destination="EJU-Bz-pvn" id="G8V-Fp-9tG"/>
                         <outlet property="saveButton" destination="vT2-5h-LgN" id="tae-nE-j40"/>
                     </connections>
@@ -295,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJH-Qz-D6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4185" y="1105"/>
+            <point key="canvasLocation" x="5205" y="1105"/>
         </scene>
         <!--Truck Edit Profile View Controller-->
         <scene sceneID="ATl-cu-hyf">
@@ -320,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sju-Or-UV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5203" y="1105"/>
+            <point key="canvasLocation" x="6222" y="1105"/>
         </scene>
         <!--Location Search View Controller-->
         <scene sceneID="VMs-vP-Dnt">
@@ -383,6 +371,281 @@
             </objects>
             <point key="canvasLocation" x="2221.5384615384614" y="1421.0900473933648"/>
         </scene>
+        <!--Truck Hours View Controller-->
+        <scene sceneID="Ax8-66-QpD">
+            <objects>
+                <viewController id="NHD-Mp-a5o" customClass="FTruckHoursViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5PT-YJ-St0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfB-4f-8jP">
+                                <rect key="frame" x="177" y="702" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <segue destination="PVl-bq-PCQ" kind="show" id="mmm-lL-JFP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="select hours of operation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szr-Fj-8Xg">
+                                <rect key="frame" x="68" y="62" width="255" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yi-Yi-KNQ">
+                                <rect key="frame" x="172" y="97" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchFlipped:" destination="NHD-Mp-a5o" eventType="valueChanged" id="7Ad-vl-TZz"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="same daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-4m-DSp">
+                                <rect key="frame" x="243" y="101" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="custom hours" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziF-rU-WlO">
+                                <rect key="frame" x="16" y="102" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP1-Fg-YQp">
+                                <rect key="frame" x="176" y="179" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLE-hS-HP6">
+                                <rect key="frame" x="50" y="280" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-5J-ht8">
+                                <rect key="frame" x="49" y="201" width="28" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sId-we-98i">
+                                <rect key="frame" x="52" y="363" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n54-qz-FCU">
+                                <rect key="frame" x="50" y="440" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="thu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1L-qz-Fd5">
+                                <rect key="frame" x="52" y="511" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbr-Kn-NMe">
+                                <rect key="frame" x="56" y="652" width="24" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1de-Op-08l">
+                                <rect key="frame" x="56" y="584" width="16" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qae-nR-VP2">
+                                <rect key="frame" x="155" y="210" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nk-7a-xz1">
+                                <rect key="frame" x="126" y="192" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-Ii-bJH">
+                                <rect key="frame" x="261" y="192" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfV-D8-L99">
+                                <rect key="frame" x="261" y="271" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyU-D4-vBm">
+                                <rect key="frame" x="261" y="354" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdV-ce-dG6">
+                                <rect key="frame" x="261" y="431" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWw-2h-wbg">
+                                <rect key="frame" x="155" y="286" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648165600.20260406">
+                                    <!--2021-07-16 22:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atK-Jb-dHL">
+                                <rect key="frame" x="147" y="150" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vr1-8C-LxG">
+                                <rect key="frame" x="281" y="150" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koe-r7-HjR">
+                                <rect key="frame" x="126" y="271" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXS-wC-oAJ">
+                                <rect key="frame" x="126" y="354" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP1-JH-3Ry">
+                                <rect key="frame" x="126" y="431" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnp-Yq-dzQ">
+                                <rect key="frame" x="126" y="502" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQL-9v-lhD">
+                                <rect key="frame" x="126" y="575" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N2-Vb-5oW">
+                                <rect key="frame" x="126" y="643" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648133200.20260406">
+                                    <!--2021-07-16 13:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnr-9O-1fN">
+                                <rect key="frame" x="261" y="502" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asc-uv-q6Q">
+                                <rect key="frame" x="261" y="575" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hY7-bN-Lkh">
+                                <rect key="frame" x="261" y="643" width="80" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="648169200.20260406">
+                                    <!--2021-07-16 23:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rd-FX-2qO">
+                                <rect key="frame" x="175" y="260" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="42d-s4-fXd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s3I-fu-PIU"/>
+                    <connections>
+                        <outlet property="customCloseLabel" destination="vr1-8C-LxG" id="F5y-xR-w2J"/>
+                        <outlet property="customHoursLabel" destination="ziF-rU-WlO" id="xqS-zE-lP6"/>
+                        <outlet property="customOpenLabel" destination="atK-Jb-dHL" id="43o-xm-Prl"/>
+                        <outlet property="dailyClose" destination="9Rd-FX-2qO" id="gSb-sH-fqV"/>
+                        <outlet property="dailyCloseContents" destination="DWw-2h-wbg" id="gOV-Ky-qCA"/>
+                        <outlet property="dailyLabel" destination="xaH-4m-DSp" id="aBl-Ur-caU"/>
+                        <outlet property="dailyOpen" destination="iP1-Fg-YQp" id="lIT-8t-XQ6"/>
+                        <outlet property="dailyOpenContents" destination="Qae-nR-VP2" id="NfO-yn-hcE"/>
+                        <outlet property="friCloseTime" destination="asc-uv-q6Q" id="TVE-jp-6Fu"/>
+                        <outlet property="friLabel" destination="1de-Op-08l" id="a5X-QF-w8X"/>
+                        <outlet property="friOpenTime" destination="AQL-9v-lhD" id="dmV-yk-dTV"/>
+                        <outlet property="monCloseTime" destination="nfV-D8-L99" id="rb5-Qt-9xO"/>
+                        <outlet property="monLabel" destination="iLE-hS-HP6" id="5Sw-MU-Qb1"/>
+                        <outlet property="monOpenTime" destination="koe-r7-HjR" id="K8P-OM-8di"/>
+                        <outlet property="satCloseTime" destination="hY7-bN-Lkh" id="8NL-tF-STf"/>
+                        <outlet property="satLabel" destination="dbr-Kn-NMe" id="YnR-Ip-nZS"/>
+                        <outlet property="satOpenTime" destination="6N2-Vb-5oW" id="gS4-ZD-8uH"/>
+                        <outlet property="sunCloseTime" destination="DJI-Ii-bJH" id="Dhc-2g-294"/>
+                        <outlet property="sunLabel" destination="KLd-5J-ht8" id="LQn-VP-y6W"/>
+                        <outlet property="sunOpenTime" destination="4nk-7a-xz1" id="t0d-5K-ywF"/>
+                        <outlet property="switchButton" destination="1yi-Yi-KNQ" id="QcA-4v-p8O"/>
+                        <outlet property="thuCloseTime" destination="Hnr-9O-1fN" id="qai-CI-PNQ"/>
+                        <outlet property="thuLabel" destination="s1L-qz-Fd5" id="T46-zV-vAH"/>
+                        <outlet property="thuOpenTime" destination="Wnp-Yq-dzQ" id="Z1X-NK-Hdx"/>
+                        <outlet property="tueCloseTime" destination="uyU-D4-vBm" id="vMd-Yv-oHn"/>
+                        <outlet property="tueLabel" destination="sId-we-98i" id="onf-6b-FZm"/>
+                        <outlet property="tueOpenTime" destination="SXS-wC-oAJ" id="NVU-uO-NZ1"/>
+                        <outlet property="wedCloseTime" destination="EdV-ce-dG6" id="Ctl-WW-TGz"/>
+                        <outlet property="wedLabel" destination="n54-qz-FCU" id="egZ-nA-Vhx"/>
+                        <outlet property="wedOpenTime" destination="oP1-JH-3Ry" id="GcE-ik-azq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xo-KA-R2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3255.3846153846152" y="1433.8862559241707"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yZv-tw-Zt4">
             <objects>
@@ -399,7 +662,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlf-Kg-wGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3215" y="1106"/>
+            <point key="canvasLocation" x="4318" y="1105"/>
         </scene>
         <!--User Sign Up View Controller-->
         <scene sceneID="XWt-a5-ngS">
@@ -615,7 +878,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ukn-VW-UhU"/>
-        <segue reference="rtj-UA-l1n"/>
+        <segue reference="mmm-lL-JFP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

@@ -29,6 +29,7 @@
 		6E182D39269F38AF00E69EBD /* FTruckProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D38269F38AF00E69EBD /* FTruckProfileViewController.m */; };
 		6E182D3C26A08AF800E69EBD /* LocationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */; };
 		6E182D3F26A0B9B400E69EBD /* AddressResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */; };
+		6E7743EB26A1E4AE00C02DA0 /* FTruckHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */; };
 		CCFE10EF9BBE638A5B164149 /* Pods_findfood_findfoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,8 @@
 		6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSearchViewController.m; sourceTree = "<group>"; };
 		6E182D3D26A0B9B400E69EBD /* AddressResultsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressResultsCell.h; sourceTree = "<group>"; };
 		6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressResultsCell.m; sourceTree = "<group>"; };
+		6E7743E926A1E4AE00C02DA0 /* FTruckHoursViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTruckHoursViewController.h; sourceTree = "<group>"; };
+		6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTruckHoursViewController.m; sourceTree = "<group>"; };
 		77D5F6210BCDD145B07CB00E /* Pods_findfood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA575DA0E14924867ED1A07 /* Pods-findfood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfood.debug.xcconfig"; path = "Target Support Files/Pods-findfood/Pods-findfood.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfood_findfoodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +216,8 @@
 				6E182D38269F38AF00E69EBD /* FTruckProfileViewController.m */,
 				6E182D3A26A08AF800E69EBD /* LocationSearchViewController.h */,
 				6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */,
+				6E7743E926A1E4AE00C02DA0 /* FTruckHoursViewController.h */,
+				6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				6E182D10269CFF1600E69EBD /* LoginViewController.m in Sources */,
 				6E182D2A269DF3C700E69EBD /* UserEditProfileViewController.m in Sources */,
 				6E182D13269D030200E69EBD /* UserSignUpViewController.m in Sources */,
+				6E7743EB26A1E4AE00C02DA0 /* FTruckHoursViewController.m in Sources */,
 				6E182D3C26A08AF800E69EBD /* LocationSearchViewController.m in Sources */,
 				6E182D27269DF36300E69EBD /* FTruckEditProfileViewController.m in Sources */,
 				6E01E12E269CF8CB00CAB045 /* AppDelegate.m in Sources */,
