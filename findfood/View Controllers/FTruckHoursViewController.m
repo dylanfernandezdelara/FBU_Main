@@ -6,6 +6,7 @@
 //
 
 #import "FTruckHoursViewController.h"
+#import "Parse/Parse.h"
 
 @interface FTruckHoursViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *switchButton;
@@ -53,7 +54,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.monLabel.alpha = 0;
+    
 }
 
 - (IBAction)switchFlipped:(UISwitch *)sender {
@@ -130,6 +131,48 @@
     }
 }
 
+- (IBAction)saveNow:(UIButton *)sender {
+    PFUser *curr_user = [PFUser currentUser];
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"hh:mm"];
+    
+    if (self.switchButton.on){
+        curr_user[@"sunOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        curr_user[@"monOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        curr_user[@"tueOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        curr_user[@"wedOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        curr_user[@"thuOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        curr_user[@"friOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        curr_user[@"satOpenTime"] = [outputFormatter stringFromDate:self.dailyOpenContents.date];
+        
+        curr_user[@"sunCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+        curr_user[@"monCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+        curr_user[@"tueCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+        curr_user[@"wedCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+        curr_user[@"thuCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+        curr_user[@"friCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+        curr_user[@"satCloseTime"] = [outputFormatter stringFromDate:self.dailyCloseContents.date];
+    }
+    else {
+        curr_user[@"sunOpenTime"] = [outputFormatter stringFromDate:self.sunOpenTime.date];
+        curr_user[@"monOpenTime"] = [outputFormatter stringFromDate:self.monOpenTime.date];
+        curr_user[@"tueOpenTime"] = [outputFormatter stringFromDate:self.tueOpenTime.date];
+        curr_user[@"wedOpenTime"] = [outputFormatter stringFromDate:self.wedOpenTime.date];
+        curr_user[@"thuOpenTime"] = [outputFormatter stringFromDate:self.thuOpenTime.date];
+        curr_user[@"friOpenTime"] = [outputFormatter stringFromDate:self.friOpenTime.date];
+        curr_user[@"satOpenTime"] = [outputFormatter stringFromDate:self.satOpenTime.date];
+        
+        curr_user[@"sunCloseTime"] = [outputFormatter stringFromDate:self.sunCloseTime.date];
+        curr_user[@"monCloseTime"] = [outputFormatter stringFromDate:self.monCloseTime.date];
+        curr_user[@"tueCloseTime"] = [outputFormatter stringFromDate:self.tueCloseTime.date];
+        curr_user[@"wedCloseTime"] = [outputFormatter stringFromDate:self.wedCloseTime.date];
+        curr_user[@"thuCloseTime"] = [outputFormatter stringFromDate:self.thuCloseTime.date];
+        curr_user[@"friCloseTime"] = [outputFormatter stringFromDate:self.friCloseTime.date];
+        curr_user[@"satCloseTime"] = [outputFormatter stringFromDate:self.satCloseTime.date];
+    }
+    
+    [[PFUser currentUser] saveInBackground];
+}
 
 /*
 #pragma mark - Navigation

@@ -11,6 +11,9 @@
 #import "Parse/Parse.h"
 
 @interface UserProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 
 @end
 
@@ -18,7 +21,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    PFUser *currUser = [PFUser currentUser];
+    
+    PFFileObject *temp_file = currUser[@"Image"];
+    [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            self.profilePicture.image = thumbnailImageView.image;
+        }];
+    
+    self.nameLabel.text = currUser[@"fullName"];
+    self.emailLabel.text = currUser[@"email"];
 }
 
 - (IBAction)logoutNow:(UIButton *)sender {

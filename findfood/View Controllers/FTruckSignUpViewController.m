@@ -35,6 +35,9 @@
     NSData *imageData = UIImagePNGRepresentation(self.profilePhotoButton.currentImage);
     PFFileObject *image = [PFFileObject fileObjectWithName:@"profilePhoto.png" data:imageData];
     currUser[@"Image"] = image;
+    NSData *detailsImageData = UIImagePNGRepresentation(self.detailsPhotoButton.currentImage);
+    PFFileObject *detailsImage = [PFFileObject fileObjectWithName:@"detailsPhoto.png" data:detailsImageData];
+    currUser[@"detailsImage"] = detailsImage;
     [[PFUser currentUser] saveInBackground];
 }
 
