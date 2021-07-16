@@ -9,6 +9,8 @@
 #import "Mapkit/Mapkit.h"
 #import <CoreLocation/CoreLocation.h>
 #import "AddressResultsCell.h"
+#import "Parse/Parse.h"
+#import "Parse/PFGeoPoint.h"
 
 @interface LocationSearchViewController ()<MKLocalSearchCompleterDelegate, UISearchBarDelegate, UISearchDisplayDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -17,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic)  CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSString *pressedLocation;
+@property (strong, nonatomic) NSString *_returnAddress;
+@property (strong, nonatomic) PFGeoPoint *pressedGeoPoint;
 
 @end
 
@@ -24,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -73,6 +78,69 @@
     // NSLog(@"%@", self.searchBar.text);
 }
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    AddressResultsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddressResultsCell"];
+    cell.nameAddressLabel.text = (self.results[indexPath.row]).title;
+    cell.subtitleLabel.text = (self.results[indexPath.row]).subtitle;
+    // NSLog(@"%@", (self.results[indexPath.row]).title);
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.results.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.pressedLocation = (self.results[indexPath.row]).title;
+    [self getGeoInformations];
+    [self dismissModalViewControllerAnimated:YES];
+    // [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)getGeoInformations {
+    // #2 - This will be called during view did load.
+    NSLog(@"Inside getGeoInformations");
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder geocodeAddressString:self.pressedLocation completionHandler:^(NSArray* placemarks, NSError* error){
+        // This is called later, at some point after view did load is called.
+        NSLog(@"Inside completionHandler.");
+
+        if(error) {
+            NSLog(@"Error");
+            return;
+        }
+        
+        CLPlacemark *placemark = [placemarks lastObject];
+        NSArray *lines = placemark.addressDictionary[@"FormattedAddressLines"];
+        NSString *str_latitude = [NSString stringWithFormat: @"%f", placemark.location.coordinate.latitude];
+        NSString *str_longitude = [NSString stringWithFormat: @"%f", placemark.location.coordinate.longitude];
+        NSString *returnAddress = [NSString stringWithFormat:@" %@, %@, %@", lines, str_latitude, str_longitude];
+        PFGeoPoint *returnGeo = [PFGeoPoint geoPointWithLatitude:placemark.location.coordinate.latitude longitude:placemark.location.coordinate.longitude];
+
+        // #4 - Now we have the return address, so we can pass it to the load method.
+        [self loadAddress:returnAddress];
+        [self loadGeoPoint:returnGeo];
+    }];
+
+    // #3 - Anything here will be called during view did load, but BEFORE the completion handler of the geocoding process is called.
+    NSLog(@"This is called third.");
+}
+
+- (void)loadAddress:(NSString*)returnAddress {
+    // #5 - this will be called last, some time after view did load is done.
+    self._returnAddress = returnAddress;
+    NSLog(@"Inside load address with return address: %@", self._returnAddress);
+}
+
+- (void)loadGeoPoint:(PFGeoPoint*)returnGeoPoint {
+    // #5 - this will be called last, some time after view did load is done.
+    self.pressedGeoPoint = returnGeoPoint;
+    PFUser *currentUser = [PFUser currentUser];
+    currentUser[@"truckLocation"] = self.pressedGeoPoint;
+    [[PFUser currentUser] saveInBackground];
+    NSLog(@"Inside load geo informations with return geo: %@", self.pressedGeoPoint);
+}
+
 /*
 #pragma mark - Navigation
 
@@ -82,17 +150,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    AddressResultsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddressResultsCell"];
-    cell.nameAddressLabel.text = (self.results[indexPath.row]).title;
-    cell.subtitleLabel.text = (self.results[indexPath.row]).subtitle;
-    NSLog(@"%@", (self.results[indexPath.row]).title);
-    return cell;
-}
-
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.results.count;
-}
-
 @end

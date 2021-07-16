@@ -325,7 +325,6 @@
         <!--Location Search View Controller-->
         <scene sceneID="VMs-vP-Dnt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ilt-Tz-71U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="xW5-HF-MgL" customClass="LocationSearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Syk-fQ-ZDf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
@@ -380,6 +379,7 @@
                         <outlet property="tableView" destination="Cxx-4n-4Gv" id="F88-Fo-ApC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ilt-Tz-71U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2221.5384615384614" y="1421.0900473933648"/>
         </scene>
