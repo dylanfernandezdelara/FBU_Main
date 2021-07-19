@@ -3,6 +3,16 @@ Original App Design Project - README Template
 
 # FindFood
 
+SPRINT WEEK 1 PROGRESS:
+
+General User:
+
+![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/65196174/126182088-331f866a-9c6c-4d35-9b79-9b2864a085fa.gif)
+
+Food Truck:
+
+![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/65196174/126182105-ab78a872-dcde-4e32-ac70-71db450d8c5a.gif)
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
