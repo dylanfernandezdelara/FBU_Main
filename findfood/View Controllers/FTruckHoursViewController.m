@@ -45,8 +45,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *friCloseTime;
 @property (weak, nonatomic) IBOutlet UIDatePicker *satCloseTime;
 
-
-
 @end
 
 @implementation FTruckHoursViewController

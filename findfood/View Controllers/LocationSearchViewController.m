@@ -87,7 +87,6 @@
     self.pressedLocation = (self.results[indexPath.row]).title;
     [self getGeoInformations];
     [self dismissModalViewControllerAnimated:YES];
-    // [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)getGeoInformations {
@@ -110,7 +109,6 @@
 }
 
 - (void)loadGeoPoint:(PFGeoPoint*)returnGeoPoint {
-    // #5 - this will be called last, some time after view did load is done.
     self.pressedGeoPoint = returnGeoPoint;
     PFUser *currentUser = [PFUser currentUser];
     currentUser[@"truckLocation"] = self.pressedGeoPoint;

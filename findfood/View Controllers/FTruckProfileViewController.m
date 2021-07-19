@@ -48,6 +48,7 @@
             UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
             self.profilePhoto.image = thumbnailImageView.image;
         }];
+    
     PFFileObject *tempDetailsFile = currUser[@"detailsImage"];
     [tempDetailsFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
             UIImage *thumbnailImage = [UIImage imageWithData:imageData];

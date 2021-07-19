@@ -22,8 +22,10 @@
     [super viewDidLoad];
     PFUser *currUser =  [PFUser currentUser];
     if (currUser[@"fullName"] != nil && currUser[@"email"] != nil && currUser[@"Image"] != nil){
+        
         self.nameField.text = currUser[@"fullName"];
         self.emailField.text = currUser[@"email"];
+        
         PFFileObject *temp_file = currUser[@"Image"];
         [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
                 UIImage *thumbnailImage = [UIImage imageWithData:imageData];
@@ -35,12 +37,15 @@
 
 - (IBAction)saveNow:(UIButton *)sender {
     PFUser *currUser =  [PFUser currentUser];
+    
     currUser[@"fullName"] = self.nameField.text;
     currUser[@"email"] = self.emailField.text;
     currUser[@"userType"] = @"generalUser";
+    
     NSData *imageData = UIImagePNGRepresentation(self.profilePhotoButton.currentImage);
     PFFileObject *image = [PFFileObject fileObjectWithName:@"name.png" data:imageData];
     currUser[@"Image"] = image;
+    
     [[PFUser currentUser] saveInBackground];
 }
 
