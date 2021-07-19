@@ -20,7 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    PFUser *currUser =  [PFUser currentUser];
+    if (currUser[@"fullName"] != nil && currUser[@"email"] != nil && currUser[@"Image"] != nil){
+        self.nameField.text = currUser[@"fullName"];
+        self.emailField.text = currUser[@"email"];
+        PFFileObject *temp_file = currUser[@"Image"];
+        [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+                UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            [self.profilePhotoButton setImage:thumbnailImageView.image forState:UIControlStateNormal];
+            }];
+    }
 }
 
 - (IBAction)saveNow:(UIButton *)sender {

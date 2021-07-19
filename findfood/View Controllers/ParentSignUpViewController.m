@@ -6,10 +6,12 @@
 //
 
 #import "ParentSignUpViewController.h"
+#import "Parse/Parse.h"
 
 @interface ParentSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UIView *truckContainerView;
 @property (weak, nonatomic) IBOutlet UIView *userContainerView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 @end
 
@@ -19,6 +21,15 @@
     [super viewDidLoad];
     self.truckContainerView.alpha = 0.0;
     self.userContainerView.alpha = 1.0;
+    
+    PFUser *currUser = [PFUser currentUser];
+    if ([currUser[@"userType"] isEqualToString:@"FoodTruck"]){
+        NSLog(@"Truck!");
+        self.segmentControl.selectedSegmentIndex = 1;
+        [self.segmentControl sendActionsForControlEvents:UIControlEventValueChanged];
+        self.segmentControl.alpha = 0.0;
+    }
+    
 }
 
 - (IBAction)didChangeIndex:(UISegmentedControl *)sender {

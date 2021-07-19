@@ -114,6 +114,7 @@
     self.pressedGeoPoint = returnGeoPoint;
     PFUser *currentUser = [PFUser currentUser];
     currentUser[@"truckLocation"] = self.pressedGeoPoint;
+    currentUser[@"streetName"] = self.pressedLocation;
     [[PFUser currentUser] saveInBackground];
 }
 

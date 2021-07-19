@@ -24,6 +24,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PFUser *currUser =  [PFUser currentUser];
+    if (currUser[@"fullName"] != nil && currUser[@"email"] != nil && currUser[@"truckDescription"] != nil && currUser[@"Image"] != nil && currUser[@"detailsImage"] != nil){
+        
+        PFFileObject *temp_file = currUser[@"Image"];
+        [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+                UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            [self.profilePhotoButton setImage:thumbnailImageView.image forState:UIControlStateNormal];
+            }];
+        
+        PFFileObject *details_file = currUser[@"detailsImage"];
+        [details_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+                UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            [self.detailsPhotoButton setImage:thumbnailImageView.image forState:UIControlStateNormal];
+            }];
+        
+        self.foodTruckNameField.text = currUser[@"fullName"];
+        self.emailField.text = currUser[@"email"];
+        self.descriptionField.text = currUser[@"truckDescription"];
+        [self.locationButton setTitle:currUser[@"streetName"] forState:UIControlStateNormal];
+        
+    }
 }
 
 - (IBAction)saveNow:(UIButton *)sender {
