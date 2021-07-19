@@ -67,18 +67,18 @@
             <objects>
                 <viewController id="abb-Fn-PZ0" customClass="ParentSignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TfZ-Lm-FR1">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-Gv-NNf" userLabel="Truck Container View">
-                                <rect key="frame" x="0.0" y="-54" width="390" height="896"/>
+                                <rect key="frame" x="0.0" y="-106" width="390" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="lXD-mo-mNY" kind="embed" id="5e8-wt-qtE"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-vJ-ZQt" userLabel="User Container View">
-                                <rect key="frame" x="0.0" y="-54" width="390" height="896"/>
+                                <rect key="frame" x="0.0" y="-106" width="390" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Mhl-D3-m69" kind="embed" id="Y1c-Al-hPg"/>
@@ -1036,30 +1036,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-3L-JZR">
-                                <rect key="frame" x="174" y="378" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-3a-8eE">
-                                <rect key="frame" x="155" y="484" width="81" height="30"/>
+                                <rect key="frame" x="293" y="711" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="details view"/>
                                 <connections>
                                     <segue destination="ATM-rS-mmT" kind="show" id="Qdc-Dx-FUa"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-jQ-DLM">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="680"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UYO-Fe-hxh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="J9g-av-H7y"/>
+                    <connections>
+                        <outlet property="mapView" destination="lg8-jQ-DLM" id="Wnq-Uu-oeM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJb-4q-va2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4097" y="-933"/>
+            <point key="canvasLocation" x="4096.9230769230771" y="-933.41232227488149"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="dvM-bE-EOC">
@@ -1107,7 +1107,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5e8-wt-qtE"/>
         <segue reference="sDF-8l-sXl"/>
         <segue reference="Y1c-Al-hPg"/>
         <segue reference="mmm-lL-JFP"/>
