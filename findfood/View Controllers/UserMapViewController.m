@@ -10,6 +10,8 @@
 #import "UserMapViewController.h"
 #import "Parse/Parse.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -44,7 +46,6 @@
 }
 
 - (void)addAnnotations {
-    NSLog(@"%lu", self.arrayOfFoodTrucks.count);
     for (int i=0; i<self.arrayOfFoodTrucks.count; i++) {
         MKPointAnnotation* annotation= [MKPointAnnotation new];
         PFUser *tempTruck = self.arrayOfFoodTrucks[i];
@@ -54,28 +55,23 @@
         annotation.coordinate = coord;
         annotation.title = tempTruck[@"fullName"];
         annotation.subtitle = tempTruck[@"truckDescription"];
-        
         [self.mapView addAnnotation:annotation];
     }
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+- (MKMarkerAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
     if ([annotation.title isEqualToString:@"My Location"]){
         return nil;
     }
     
-     MKAnnotationView *annotationView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+     MKMarkerAnnotationView *annotationView = (MKMarkerAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"MKMarkerAnnotationView"];
      if (annotationView == nil) {
-         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-         annotationView.canShowCallout = true;
-         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
-         annotationView.image = [UIImage imageNamed:@"truckPin"];
+         annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MKMarkerAnnotationView"];
+         annotationView.markerTintColor = UIColorFromRGB(0x3B5B33);
+         annotationView.glyphImage = [UIImage imageNamed:@"truckMarker"];
+         annotationView.clusteringIdentifier = @"MKMarkerAnnotationView";
      }
-
-     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-     imageView.image = [UIImage imageNamed:@"truckIcon"];
-
      return annotationView;
  }
 
