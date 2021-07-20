@@ -54,7 +54,6 @@
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
         annotation.coordinate = coord;
         annotation.title = tempTruck[@"fullName"];
-        annotation.subtitle = tempTruck[@"truckDescription"];
         [self.mapView addAnnotation:annotation];
     }
 }

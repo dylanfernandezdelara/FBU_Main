@@ -30,6 +30,7 @@
 		6E182D3C26A08AF800E69EBD /* LocationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */; };
 		6E182D3F26A0B9B400E69EBD /* AddressResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */; };
 		6E7743EB26A1E4AE00C02DA0 /* FTruckHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */; };
+		6E7743EE26A7701E00C02DA0 /* FTruckCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743ED26A7701E00C02DA0 /* FTruckCategoryViewController.m */; };
 		CCFE10EF9BBE638A5B164149 /* Pods_findfood_findfoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressResultsCell.m; sourceTree = "<group>"; };
 		6E7743E926A1E4AE00C02DA0 /* FTruckHoursViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTruckHoursViewController.h; sourceTree = "<group>"; };
 		6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTruckHoursViewController.m; sourceTree = "<group>"; };
+		6E7743EC26A7701E00C02DA0 /* FTruckCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTruckCategoryViewController.h; sourceTree = "<group>"; };
+		6E7743ED26A7701E00C02DA0 /* FTruckCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTruckCategoryViewController.m; sourceTree = "<group>"; };
 		77D5F6210BCDD145B07CB00E /* Pods_findfood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA575DA0E14924867ED1A07 /* Pods-findfood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-findfood.debug.xcconfig"; path = "Target Support Files/Pods-findfood/Pods-findfood.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF6EFC096645362D19A3B9A /* Pods_findfood_findfoodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_findfood_findfoodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +221,8 @@
 				6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */,
 				6E7743E926A1E4AE00C02DA0 /* FTruckHoursViewController.h */,
 				6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */,
+				6E7743EC26A7701E00C02DA0 /* FTruckCategoryViewController.h */,
+				6E7743ED26A7701E00C02DA0 /* FTruckCategoryViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				TargetAttributes = {
 					6E01E128269CF8CB00CAB045 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					6E01E143269CF8CC00CAB045 = {
 						CreatedOnToolsVersion = 12.5;
@@ -502,6 +508,7 @@
 				6E182D22269DF16B00E69EBD /* DetailsViewController.m in Sources */,
 				6E182D10269CFF1600E69EBD /* LoginViewController.m in Sources */,
 				6E182D2A269DF3C700E69EBD /* UserEditProfileViewController.m in Sources */,
+				6E7743EE26A7701E00C02DA0 /* FTruckCategoryViewController.m in Sources */,
 				6E182D13269D030200E69EBD /* UserSignUpViewController.m in Sources */,
 				6E7743EB26A1E4AE00C02DA0 /* FTruckHoursViewController.m in Sources */,
 				6E182D3C26A08AF800E69EBD /* LocationSearchViewController.m in Sources */,
@@ -686,6 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M35Y5F744J;
 				INFOPLIST_FILE = findfood/Info.plist;
@@ -705,6 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M35Y5F744J;
 				INFOPLIST_FILE = findfood/Info.plist;
