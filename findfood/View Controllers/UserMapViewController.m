@@ -33,6 +33,7 @@
              [self.locationManager requestWhenInUseAuthorization];
          }
     [self.locationManager startUpdatingLocation];
+    self.mapView.showsUserLocation = YES;
     
     [self.mapView setCenterCoordinate:self.locationManager.location.coordinate animated:true];
     
@@ -52,17 +53,24 @@
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
         annotation.coordinate = coord;
         annotation.title = tempTruck[@"fullName"];
+        annotation.subtitle = tempTruck[@"truckDescription"];
         
         [self.mapView addAnnotation:annotation];
     }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    
+    if ([annotation.title isEqualToString:@"My Location"]){
+        return nil;
+    }
+    
+     MKAnnotationView *annotationView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
      if (annotationView == nil) {
-         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
          annotationView.canShowCallout = true;
          annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+         annotationView.image = [UIImage imageNamed:@"truckPin"];
      }
 
      UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
