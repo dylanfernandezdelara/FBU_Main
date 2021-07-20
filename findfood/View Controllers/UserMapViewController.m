@@ -10,7 +10,7 @@
 #import "UserMapViewController.h"
 #import "Parse/Parse.h"
 
-@interface UserMapViewController ()<CLLocationManagerDelegate>
+@interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic)  CLLocationManager *locationManager;
@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mapView.delegate = self;
     
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -38,7 +40,6 @@
     [self.mapView setRegion:region];
     
     [self fetchFoodTrucks];
-    
 }
 
 - (void)addAnnotations {
@@ -50,9 +51,25 @@
         NSLog(@"%@",temp);
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
         annotation.coordinate = coord;
+        annotation.title = tempTruck[@"fullName"];
+        
         [self.mapView addAnnotation:annotation];
     }
 }
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+     if (annotationView == nil) {
+         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+         annotationView.canShowCallout = true;
+         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+     }
+
+     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
+     imageView.image = [UIImage imageNamed:@"truckIcon"];
+
+     return annotationView;
+ }
 
 - (void)fetchFoodTrucks {
     PFQuery *UserQuery = [PFUser query];
