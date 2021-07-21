@@ -1,0 +1,2705 @@
+{
+    "className": "User",
+    "rows": [
+        {
+            "username": "truck0",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 29.6670002,
+                "longitude": -98.4254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck0@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck1",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 29.7670002,
+                "longitude": -98.3254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck1@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck2",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 29.8670002,
+                "longitude": -98.2254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck2@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck3",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 29.9670002,
+                "longitude": -98.1254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck3@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck4",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.0670002,
+                "longitude": -98.0254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck4@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck5",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.1670002,
+                "longitude": -97.9254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck5@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck6",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.2670002,
+                "longitude": -97.8254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck6@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck7",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.3670002,
+                "longitude": -97.7254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck7@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck8",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.4670002,
+                "longitude": -97.6254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck8@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck9",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.5670002,
+                "longitude": -97.5254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck9@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck10",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.6670002,
+                "longitude": -97.4254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck10@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck11",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.7670002,
+                "longitude": -97.3254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck11@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck12",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.8670002,
+                "longitude": -97.2254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck12@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck13",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 30.9670002,
+                "longitude": -97.1254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck13@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck14",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.0670002,
+                "longitude": -97.0254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck14@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck15",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.1670002,
+                "longitude": -96.9254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck15@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck16",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.2670002,
+                "longitude": -96.8254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck16@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck17",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.3670002,
+                "longitude": -96.7254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck17@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck18",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.4670002,
+                "longitude": -96.6254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck18@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck19",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.5670002,
+                "longitude": -96.5254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck19@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck20",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.6670002,
+                "longitude": -96.4254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck20@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck21",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.7670002,
+                "longitude": -96.3254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck21@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck22",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.8670002,
+                "longitude": -96.2254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck22@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck23",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 31.9670002,
+                "longitude": -96.1254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck23@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck24",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.0670002,
+                "longitude": -96.0254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck24@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck25",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.1670002,
+                "longitude": -95.9254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck25@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck26",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.2670002,
+                "longitude": -95.8254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck26@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck27",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.3670002,
+                "longitude": -95.7254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck27@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck28",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.4670002,
+                "longitude": -95.6254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck28@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck29",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.5670002,
+                "longitude": -95.5254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck29@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck30",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.6670002,
+                "longitude": -95.4254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck30@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck31",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.7670002,
+                "longitude": -95.3254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck31@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck32",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.8670002,
+                "longitude": -95.2254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck32@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck33",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 32.9670002,
+                "longitude": -95.1254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck33@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck34",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.0670002,
+                "longitude": -95.0254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck34@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck35",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.1670002,
+                "longitude": -94.9254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck35@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck36",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.2670002,
+                "longitude": -94.8254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck36@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck37",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.3670002,
+                "longitude": -94.7254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck37@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck38",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.4670002,
+                "longitude": -94.6254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck38@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck39",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.5670002,
+                "longitude": -94.5254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck39@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck40",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.6670002,
+                "longitude": -94.4254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck40@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck41",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.7670002,
+                "longitude": -94.3254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck41@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck42",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.8670002,
+                "longitude": -94.2254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck42@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck43",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 33.9670002,
+                "longitude": -94.1254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck43@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck44",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 34.0670002,
+                "longitude": -94.0254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck44@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck45",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 34.1670002,
+                "longitude": -93.9254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck45@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck46",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 34.2670002,
+                "longitude": -93.8254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck46@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck47",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 34.3670002,
+                "longitude": -93.7254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck47@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck48",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 34.4670002,
+                "longitude": -93.6254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck48@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        {
+            "username": "truck49",
+            "password": "password",
+            "truckLocation": {
+                "__type": "GeoPoint",
+                "latitude": 34.5670002,
+                "longitude": -93.5254288
+            },
+            "streetName": "24226 Waterwell Oaks",
+            "email": "truck49@gmail.com",
+            "truckDescription": "description text",
+            "detailsImage": {
+                "__type": "File",
+                "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+            },
+            "userType": "FoodTruck",
+            "fullName": "truck1",
+            "Image": {
+                "__type": "File",
+                "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
+                "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+            },
+            "friOpenTime": "08:00",
+            "thuOpenTime": "08:00",
+            "monCloseTime": "05:00",
+            "friCloseTime": "05:00",
+            "satCloseTime": "05:00",
+            "sunOpenTime": "08:00",
+            "satOpenTime": "08:00",
+            "tueOpenTime": "08:00",
+            "sunCloseTime": "05:00",
+            "wedOpenTime": "08:00",
+            "monOpenTime": "08:00",
+            "wedCloseTime": "05:00",
+            "thuCloseTime": "05:00",
+            "tueCloseTime": "05:00",
+            "mexicanType": false,
+            "pizzaType": false,
+            "priceLevel": 1,
+            "sandwichesType": false,
+            "bbqType": false,
+            "seafoodType": false,
+            "brunchType": true,
+            "ACL": {
+                "*": {
+                    "read": true
+                },
+                "LG6EtQ0AiP": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        }
+    ]
+}
