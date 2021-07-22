@@ -1,4 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-findfood/Pods-findfood-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
-${BUILT_PRODUCTS_DIR}/LUNSegmentedControl/LUNSegmentedControl.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework

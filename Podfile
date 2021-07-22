@@ -7,7 +7,6 @@ target 'findfood' do
 
   # Pods for findfood
   pod 'Parse'
-  pod 'LUNSegmentedControl'
 
   target 'findfoodTests' do
     inherit! :search_paths

@@ -12,7 +12,7 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
+@interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic)  CLLocationManager *locationManager;
@@ -38,6 +38,10 @@
     
     self.mapView.delegate = self;
     
+    UIPanGestureRecognizer* dragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(isMapDoneMoving:)];
+        [dragRecognizer setDelegate:self];
+        [self.mapView addGestureRecognizer:dragRecognizer];
+    
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -56,12 +60,21 @@
     [self fetchFoodTrucks];
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
+        NSLog(@"Map moved.");
+    }
+}
+
 - (void)addAnnotations {
     for (int i=0; i<self.arrayOfFoodTrucks.count; i++) {
         MKPointAnnotation* annotation= [MKPointAnnotation new];
         PFUser *tempTruck = self.arrayOfFoodTrucks[i];
         PFGeoPoint *temp = tempTruck[@"truckLocation"];
-        NSLog(@"%@",temp);
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
         annotation.coordinate = coord;
         annotation.title = tempTruck[@"fullName"];
