@@ -18,6 +18,17 @@
 @property (strong, nonatomic)  CLLocationManager *locationManager;
 @property (strong, nonatomic) NSArray *arrayOfFoodTrucks;
 
+@property(assign, nonatomic) BOOL pizzaFilter;
+@property(assign, nonatomic) BOOL bbqFilter;
+@property(assign, nonatomic) BOOL brunchFilter;
+@property(assign, nonatomic) BOOL mexicanFilter;
+@property(assign, nonatomic) BOOL seafoodFilter;
+@property(assign, nonatomic) BOOL sandwichesFilter;
+
+@property(assign, nonatomic) BOOL popularFilter;
+
+@property(assign, nonatomic) NSInteger priceFilter;
+
 @end
 
 @implementation UserMapViewController
@@ -67,10 +78,12 @@
      MKMarkerAnnotationView *annotationView = (MKMarkerAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"MKMarkerAnnotationView"];
      if (annotationView == nil) {
          annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MKMarkerAnnotationView"];
-         annotationView.markerTintColor = UIColorFromRGB(0x3B5B33);
-         annotationView.glyphImage = [UIImage imageNamed:@"truckMarker"];
          annotationView.clusteringIdentifier = @"MKMarkerAnnotationView";
      }
+    
+     annotationView.markerTintColor = UIColorFromRGB(0x3B5B33);
+     annotationView.glyphImage = [UIImage imageNamed:@"truckMarker"];
+    
      return annotationView;
  }
 
@@ -79,7 +92,7 @@
     [UserQuery orderByDescending:@"createdAt"];
     [UserQuery whereKey:@"userType" equalTo:@"FoodTruck"];
     [UserQuery includeKey:@"author"];
-    UserQuery.limit = 20;
+    UserQuery.limit = 50;
     
     [UserQuery findObjectsInBackgroundWithBlock:^(NSArray<PFUser *> * _Nullable users, NSError * _Nullable error) {
         if (users) {
