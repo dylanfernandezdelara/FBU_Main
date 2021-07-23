@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UserMapViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *filterArguments;
+@property (strong, nonatomic) NSMutableArray *arrayOfFoodTrucks;
+@property (strong, nonatomic) NSMutableArray *arrayOfAnnotations;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -26,9 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
 }
 
 #pragma mark - Navigation
@@ -36,7 +33,27 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    // NSLog(@"%@", [NSNumber numberWithBool:self.pizzaFilter.on]);
+    self.arrayOfFilters[0] = [NSNumber numberWithBool:self.pizzaFilter.on];
+    // NSLog(@"SHOULD HAVE PIZZA AS 1: %@", self.arrayOfFilters);
+    self.arrayOfFilters[1] = [NSNumber numberWithBool:self.bbqFilter.on];
+    self.arrayOfFilters[2] = [NSNumber numberWithBool:self.brunchFilter.on];
+    self.arrayOfFilters[3] = [NSNumber numberWithBool:self.mexicanFilter.on];
+    self.arrayOfFilters[4] = [NSNumber numberWithBool:self.seafoodFilter.on];
+    self.arrayOfFilters[5] = [NSNumber numberWithBool:self.sandwichesFilter.on];
     
+    self.arrayOfFilters[6] = [NSNumber numberWithBool:self.popularFilter.on];
+    
+    self.arrayOfFilters[7] = [NSNumber numberWithInteger:self.priceRangeSegment.selectedSegmentIndex];
+    
+    if ([segue.identifier isEqualToString:@"applyFiltersSegue"]){
+        NSLog(@"RIGHT BEFORE SEGUE HAPPENS: %@", self.arrayOfFilters);
+        UserMapViewController *userMapView = [segue destinationViewController];
+        userMapView.filterArguments = self.arrayOfFilters;
+        userMapView.arrayOfFoodTrucks = self.formerFoodTrucks;
+        userMapView.arrayOfAnnotations = self.formerTruckAnnotations;
+        
+    }
     
 }
 

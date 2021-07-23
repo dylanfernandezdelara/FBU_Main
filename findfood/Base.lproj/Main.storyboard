@@ -1223,26 +1223,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-d6-VjS" customClass="LUNSegmentedControl">
-                                <rect key="frame" x="16" y="718" width="360" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedStateTextColor">
-                                        <color key="value" systemColor="systemBackgroundColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="KqP-DS-fT8" id="Jm9-eH-1VA"/>
-                                    <outlet property="delegate" destination="KqP-DS-fT8" id="gpK-Fy-42c"/>
-                                </connections>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5ve-oy-HVw">
                                 <rect key="frame" x="42" y="503" width="222" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1257,7 +1237,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="apply filters"/>
                                 <connections>
-                                    <segue destination="fgQ-Ag-GQ5" kind="show" identifier="applyFiltersSegue" id="Kjb-fl-Rbw"/>
+                                    <segue destination="fgQ-Ag-GQ5" kind="show" identifier="applyFiltersSegue" id="uk8-k7-mfh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1270,7 +1250,6 @@
                         <outlet property="mexicanFilter" destination="jMT-Iq-phc" id="CLS-bV-FG2"/>
                         <outlet property="pizzaFilter" destination="WQb-74-4JD" id="JaM-uT-X6n"/>
                         <outlet property="popularFilter" destination="y1s-ZP-AWi" id="Z5f-Aq-08C"/>
-                        <outlet property="priceRangeFilter" destination="HdN-d6-VjS" id="Xei-3S-wuH"/>
                         <outlet property="priceRangeSegment" destination="5ve-oy-HVw" id="sU3-yW-QsU"/>
                         <outlet property="sandwichesFilter" destination="6tw-H7-OYu" id="xec-PY-Olz"/>
                         <outlet property="seafoodFilter" destination="KJh-QN-EYk" id="blA-3B-uoY"/>
@@ -1370,7 +1349,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sDF-8l-sXl"/>
-        <segue reference="Kjb-fl-Rbw"/>
+        <segue reference="uk8-k7-mfh"/>
         <segue reference="Y1c-Al-hPg"/>
         <segue reference="0r0-aI-V4k"/>
         <segue reference="1yg-qs-Crf"/>
