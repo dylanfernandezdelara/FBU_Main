@@ -16,6 +16,7 @@
 #define EARTHCIRUMFERENCE 4007500.0
 
 @interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *truckName;
 @property (weak, nonatomic) IBOutlet UILabel *truckDescription;
 
@@ -34,6 +35,30 @@
 
 @property(assign, nonatomic) NSInteger priceFilter;
 
+@property (weak, nonatomic) IBOutlet UILabel *sunLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *thuLabel;
+@property (weak, nonatomic) IBOutlet UILabel *friLabel;
+@property (weak, nonatomic) IBOutlet UILabel *satLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *sunOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tueOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wedOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *thuOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *friOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *satOpenLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *sunCloseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monCloseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tueCloseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wedCloseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *thuCloseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *friCloseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *satCloseLabel;
+
 @end
 
 @implementation UserMapViewController
@@ -42,6 +67,30 @@
     [super viewDidLoad];
     
     self.mapView.delegate = self;
+    
+    self.sunLabel.alpha = 0;
+    self.monLabel.alpha = 0;
+    self.tueLabel.alpha = 0;
+    self.wedLabel.alpha = 0;
+    self.thuLabel.alpha = 0;
+    self.friLabel.alpha = 0;
+    self.satLabel.alpha = 0;
+    
+    self.sunOpenLabel.alpha = 0;
+    self.monOpenLabel.alpha = 0;
+    self.tueOpenLabel.alpha = 0;
+    self.wedOpenLabel.alpha = 0;
+    self.thuOpenLabel.alpha = 0;
+    self.friOpenLabel.alpha = 0;
+    self.satOpenLabel.alpha = 0;
+    
+    self.sunCloseLabel.alpha = 0;
+    self.monCloseLabel.alpha = 0;
+    self.tueCloseLabel.alpha = 0;
+    self.wedCloseLabel.alpha = 0;
+    self.thuCloseLabel.alpha = 0;
+    self.friCloseLabel.alpha = 0;
+    self.satCloseLabel.alpha = 0;
     
     UIPanGestureRecognizer* dragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(isMapDoneMoving:)];
         [dragRecognizer setDelegate:self];
@@ -65,8 +114,11 @@
     if (self.filterArguments.count != 8){
         NSMutableArray *initArrOfAnnotations = [[NSMutableArray alloc] init];
         NSMutableArray *initArrOfTrucks = [[NSMutableArray alloc] init];
+        NSMutableDictionary *initDictOfTrucks = [[NSMutableDictionary alloc] init];
+        
         self.arrayOfAnnotations = initArrOfAnnotations;
         self.arrayOfFoodTrucks = initArrOfTrucks;
+        self.dictOfFoodTrucks = initDictOfTrucks;
         
         self.pizzaFilter = false;
         self.bbqFilter = false;
@@ -90,20 +142,120 @@
     }
     
     else {
+        
         [self.mapView addAnnotations:self.arrayOfAnnotations];
+        
     }
 
     [self fetchFoodTrucks:self.filterArguments];
 }
 
+- (void)addTrucksArrayToDictionary:(NSMutableArray*)truckArr {
+    
+    for (int i = 0; i < truckArr.count; i++){
+        
+        PFUser *currTruck = truckArr[i];
+        [self.dictOfFoodTrucks setObject:currTruck forKey:currTruck[@"fullName"]];
+        
+    }
+    
+}
+
+- (void)removeTrucksArrayFromDictionary:(NSMutableArray*)truckArr {
+    
+    for (int i = 0; i < truckArr.count; i++){
+        
+        PFUser *currTruck = truckArr[i];
+        [self.dictOfFoodTrucks removeObjectForKey:currTruck[@"fullName"]];
+        
+    }
+    
+}
+
 - (void)mapView:(MKMapView *)mapView
-didSelectAnnotationView:(MKMarkerAnnotationView *)view{
+didSelectAnnotationView:(MKAnnotationView *)view{
     if ([view.clusteringIdentifier isEqualToString:@"MKMarkerAnnotationView"]){
         
         MKClusterAnnotation *cluster = (MKClusterAnnotation*) view.annotation;
         [mapView showAnnotations:cluster.memberAnnotations animated:YES];
     
     }
+    else {
+        
+        PFUser *pressedTruck = [self.dictOfFoodTrucks objectForKey:view.annotation.title];
+        self.truckName.text = pressedTruck[@"fullName"];
+        self.truckDescription.text = pressedTruck[@"truckDescription"];
+        
+        self.sunOpenLabel.text = pressedTruck[@"sunOpenTime"];
+        self.monOpenLabel.text = pressedTruck[@"monOpenTime"];
+        self.tueOpenLabel.text = pressedTruck[@"tueOpenTime"];
+        self.wedOpenLabel.text = pressedTruck[@"wedOpenTime"];
+        self.thuOpenLabel.text = pressedTruck[@"thuOpenTime"];
+        self.friOpenLabel.text = pressedTruck[@"friOpenTime"];
+        self.satOpenLabel.text = pressedTruck[@"satOpenTime"];
+        
+        self.sunCloseLabel.text = pressedTruck[@"sunCloseTime"];
+        self.monCloseLabel.text = pressedTruck[@"monCloseTime"];
+        self.tueCloseLabel.text = pressedTruck[@"tueCloseTime"];
+        self.wedCloseLabel.text = pressedTruck[@"wedCloseTime"];
+        self.thuCloseLabel.text = pressedTruck[@"thuCloseTime"];
+        self.friCloseLabel.text = pressedTruck[@"friCloseTime"];
+        self.satCloseLabel.text = pressedTruck[@"satCloseTime"];
+        
+        self.sunLabel.alpha = 1;
+        self.monLabel.alpha = 1;
+        self.tueLabel.alpha = 1;
+        self.wedLabel.alpha = 1;
+        self.thuLabel.alpha = 1;
+        self.friLabel.alpha = 1;
+        self.satLabel.alpha = 1;
+        
+        self.sunOpenLabel.alpha = 1;
+        self.monOpenLabel.alpha = 1;
+        self.tueOpenLabel.alpha = 1;
+        self.wedOpenLabel.alpha = 1;
+        self.thuOpenLabel.alpha = 1;
+        self.friOpenLabel.alpha = 1;
+        self.satOpenLabel.alpha = 1;
+        
+        self.sunCloseLabel.alpha = 1;
+        self.monCloseLabel.alpha = 1;
+        self.tueCloseLabel.alpha = 1;
+        self.wedCloseLabel.alpha = 1;
+        self.thuCloseLabel.alpha = 1;
+        self.friCloseLabel.alpha = 1;
+        self.satCloseLabel.alpha = 1;
+        
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView
+didDeselectAnnotationView:(MKAnnotationView *)view{
+    
+    self.sunLabel.alpha = 0;
+    self.monLabel.alpha = 0;
+    self.tueLabel.alpha = 0;
+    self.wedLabel.alpha = 0;
+    self.thuLabel.alpha = 0;
+    self.friLabel.alpha = 0;
+    self.satLabel.alpha = 0;
+    
+    self.sunOpenLabel.alpha = 0;
+    self.monOpenLabel.alpha = 0;
+    self.tueOpenLabel.alpha = 0;
+    self.wedOpenLabel.alpha = 0;
+    self.thuOpenLabel.alpha = 0;
+    self.friOpenLabel.alpha = 0;
+    self.satOpenLabel.alpha = 0;
+    
+    self.sunCloseLabel.alpha = 0;
+    self.monCloseLabel.alpha = 0;
+    self.tueCloseLabel.alpha = 0;
+    self.wedCloseLabel.alpha = 0;
+    self.thuCloseLabel.alpha = 0;
+    self.friCloseLabel.alpha = 0;
+    self.satCloseLabel.alpha = 0;
+    
 }
 
 - (MKMarkerAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -125,62 +277,12 @@ didSelectAnnotationView:(MKMarkerAnnotationView *)view{
      return annotationView;
  }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
-}
-
 - (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
         
         // [self fetchFoodTrucks:self.filterArguments];
 
     }
-}
-
-- (void)addAnnotationsToMap {
-    for (int i=0; i<self.arrayOfFoodTrucks.count; i++) {
-        MKPointAnnotation* annotation= [MKPointAnnotation new];
-        PFUser *tempTruck = self.arrayOfFoodTrucks[i];
-        PFGeoPoint *temp = tempTruck[@"truckLocation"];
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
-        annotation.coordinate = coord;
-        annotation.title = tempTruck[@"fullName"];
-        [self.mapView addAnnotation:annotation];
-        [self.arrayOfAnnotations addObject:annotation];
-    }
-}
-
-- (NSMutableArray*)removeExcessTrucks:(NSArray*)smallerArr removeExcessIn:(NSMutableArray*)biggerArr{
-    
-    NSMutableDictionary *objectIDtoTruck = [[NSMutableDictionary alloc] init];
-    NSMutableArray *trucksToBeRemoved = [[NSMutableArray alloc] init];
-    self.annotationsToBeRemoved = [[NSMutableDictionary alloc] init];
-    
-    for (int i = 0; i < smallerArr.count; i++){
-        PFUser *currTruck = smallerArr[i];
-        [objectIDtoTruck setObject:currTruck forKey:currTruck.objectId];
-    }
-    
-    for (int i = 0; i < biggerArr.count; i++){
-        PFUser *currTruck = biggerArr[i];
-        
-        if ( ![objectIDtoTruck objectForKey:currTruck.objectId] ){
-            [trucksToBeRemoved addObject:biggerArr[i]];
-            [self.annotationsToBeRemoved setObject:currTruck forKey:currTruck[@"fullName"]];
-        }
-        
-        else {
-            [objectIDtoTruck removeObjectForKey:currTruck.objectId];
-        }
-        
-    }
-    
-    NSMutableArray *newTrucksLeftover = [[objectIDtoTruck allValues] mutableCopy];
-    NSMutableArray *newAnnotations = [self convertRemovedTruckObjectsToAnnotation:newTrucksLeftover];
-    [self.mapView addAnnotations:newAnnotations];
-    
-    return trucksToBeRemoved;
-    
 }
 
 - (void)findAndRemoveAnnotations {
@@ -215,6 +317,43 @@ didSelectAnnotationView:(MKMarkerAnnotationView *)view{
     }
     
     return convertedToAnnotations;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (NSMutableArray*)removeExcessTrucks:(NSArray*)smallerArr removeExcessIn:(NSMutableArray*)biggerArr{
+    
+    NSMutableDictionary *objectIDtoTruck = [[NSMutableDictionary alloc] init];
+    NSMutableArray *trucksToBeRemoved = [[NSMutableArray alloc] init];
+    self.annotationsToBeRemoved = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < smallerArr.count; i++){
+        PFUser *currTruck = smallerArr[i];
+        [objectIDtoTruck setObject:currTruck forKey:currTruck.objectId];
+    }
+    
+    for (int i = 0; i < biggerArr.count; i++){
+        PFUser *currTruck = biggerArr[i];
+        
+        if ( ![objectIDtoTruck objectForKey:currTruck.objectId] ){
+            [trucksToBeRemoved addObject:biggerArr[i]];
+            [self.annotationsToBeRemoved setObject:currTruck forKey:currTruck[@"fullName"]];
+        }
+        
+        else {
+            [objectIDtoTruck removeObjectForKey:currTruck.objectId];
+        }
+        
+    }
+    
+    NSMutableArray *newTrucksLeftover = [[objectIDtoTruck allValues] mutableCopy];
+    NSMutableArray *newAnnotations = [self convertRemovedTruckObjectsToAnnotation:newTrucksLeftover];
+    [self.mapView addAnnotations:newAnnotations];
+    
+    return trucksToBeRemoved;
+    
 }
 
 - (void)fetchFoodTrucks:(NSArray*)filters {
@@ -265,6 +404,7 @@ didSelectAnnotationView:(MKMarkerAnnotationView *)view{
                         trucksToRemove = [self removeExcessTrucks:users removeExcessIn:trucksToRemove];
                         [self findAndRemoveAnnotations];
                         [self.arrayOfFoodTrucks removeObjectsInArray:trucksToRemove];
+                        [self removeTrucksArrayFromDictionary:trucksToRemove];
                         self.arrayOfAnnotations = [self.mapView.annotations mutableCopy];
                         
                     }
@@ -274,6 +414,7 @@ didSelectAnnotationView:(MKMarkerAnnotationView *)view{
                         NSMutableArray *trucksToAdd = [users mutableCopy];
                         [trucksToAdd removeObjectsInArray:self.arrayOfFoodTrucks];
                         [self.arrayOfFoodTrucks addObjectsFromArray:trucksToAdd];
+                        [self addTrucksArrayToDictionary:trucksToAdd];
                         NSMutableArray *annotationsToAdd = [self convertRemovedTruckObjectsToAnnotation:trucksToAdd];
                         [self.mapView addAnnotations:annotationsToAdd];
                         self.arrayOfAnnotations = [self.mapView.annotations mutableCopy];
