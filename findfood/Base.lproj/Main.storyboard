@@ -1268,17 +1268,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-jQ-DLM">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="703"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="606"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-3a-8eE">
-                                <rect key="frame" x="293" y="711" width="81" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="details view"/>
-                                <connections>
-                                    <segue destination="ATM-rS-mmT" kind="show" id="Qdc-Dx-FUa"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exi-3K-t96">
                                 <rect key="frame" x="23" y="50" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1287,6 +1279,28 @@
                                     <segue destination="KqP-DS-fT8" kind="presentation" id="DXi-CF-ObG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-3a-8eE">
+                                <rect key="frame" x="293" y="567" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="details view"/>
+                                <connections>
+                                    <segue destination="ATM-rS-mmT" kind="show" id="Qdc-Dx-FUa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqu-AE-ETX">
+                                <rect key="frame" x="23" y="614" width="351" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvX-VH-sk1">
+                                <rect key="frame" x="23" y="662" width="351" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UYO-Fe-hxh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1295,6 +1309,8 @@
                     <navigationItem key="navigationItem" id="Iuf-eJ-2Ff"/>
                     <connections>
                         <outlet property="mapView" destination="lg8-jQ-DLM" id="Wnq-Uu-oeM"/>
+                        <outlet property="truckDescription" destination="MvX-VH-sk1" id="1HD-ZQ-ltX"/>
+                        <outlet property="truckName" destination="Kqu-AE-ETX" id="yyN-PS-r4q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJb-4q-va2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1348,6 +1364,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="DXi-CF-ObG"/>
         <segue reference="sDF-8l-sXl"/>
         <segue reference="uk8-k7-mfh"/>
         <segue reference="Y1c-Al-hPg"/>

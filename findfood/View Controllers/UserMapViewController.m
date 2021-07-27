@@ -13,13 +13,15 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#define EARTHCIRUMFERENCE 40075000
+#define EARTHCIRUMFERENCE 4007500.0
 
 @interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *truckName;
+@property (weak, nonatomic) IBOutlet UILabel *truckDescription;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic)  CLLocationManager *locationManager;
-//@property (strong, nonatomic) NSArray *arrayOfFoodTrucks;
+@property (strong, nonatomic) NSMutableDictionary *annotationsToBeRemoved;
 
 @property(assign, nonatomic) BOOL pizzaFilter;
 @property(assign, nonatomic) BOOL bbqFilter;
@@ -60,14 +62,12 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.locationManager.location.coordinate, 400, 400);
     [self.mapView setRegion:region];
     
-    // NSLog(@"FILTER COUNT: %lu", self.filterArguments.count);
     if (self.filterArguments.count != 8){
         NSMutableArray *initArrOfAnnotations = [[NSMutableArray alloc] init];
         NSMutableArray *initArrOfTrucks = [[NSMutableArray alloc] init];
         self.arrayOfAnnotations = initArrOfAnnotations;
         self.arrayOfFoodTrucks = initArrOfTrucks;
         
-        //NSLog(@"shouldn't be here");
         self.pizzaFilter = false;
         self.bbqFilter = false;
         self.brunchFilter = false;
@@ -83,78 +83,27 @@
         [defaultArguments addObject:[NSNumber numberWithBool:self.seafoodFilter]];
         [defaultArguments addObject:[NSNumber numberWithBool:self.sandwichesFilter]];
         
-        // temp placeholders for popular and price filter
         [defaultArguments addObject:[NSNumber numberWithInteger:2]];
         [defaultArguments addObject:[NSNumber numberWithInteger:2]];
         
         self.filterArguments = defaultArguments;
     }
+    
     else {
         [self.mapView addAnnotations:self.arrayOfAnnotations];
     }
-    
-    NSLog(@"FILTER ARRAY: %@", self.filterArguments);
-    
+
     [self fetchFoodTrucks:self.filterArguments];
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
-}
-
-- (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        [self fetchFoodTrucks:self.filterArguments];
-        NSLog(@"Map moved");
-    }
-}
-
-- (void)addAnnotationsToMap {
-    for (int i=0; i<self.arrayOfFoodTrucks.count; i++) {
-        MKPointAnnotation* annotation= [MKPointAnnotation new];
-        PFUser *tempTruck = self.arrayOfFoodTrucks[i];
-        PFGeoPoint *temp = tempTruck[@"truckLocation"];
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
-        annotation.coordinate = coord;
-        annotation.title = tempTruck[@"fullName"];
-        [self.mapView addAnnotation:annotation];
-        [self.arrayOfAnnotations addObject:annotation];
-    }
-}
-
-- (NSMutableArray*)removeDuplicateTrucks:(NSArray*)smallerArr removeFrom:(NSMutableArray*)biggerArr{
+- (void)mapView:(MKMapView *)mapView
+didSelectAnnotationView:(MKMarkerAnnotationView *)view{
+    if ([view.clusteringIdentifier isEqualToString:@"MKMarkerAnnotationView"]){
+        
+        MKClusterAnnotation *cluster = (MKClusterAnnotation*) view.annotation;
+        [mapView showAnnotations:cluster.memberAnnotations animated:YES];
     
-    NSMutableDictionary *objectIDtoTruck = [[NSMutableDictionary alloc] init];
-    NSMutableArray *resultedTrucks = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < smallerArr.count; i++){
-        PFUser *currTruck = smallerArr[i];
-        [objectIDtoTruck setObject:currTruck forKey:currTruck.objectId];
     }
-    
-    for (int i = 0; i < biggerArr.count; i++){
-        PFUser *currTruck = biggerArr[i];
-        if ( ![objectIDtoTruck objectForKey:currTruck.objectId] ){
-            [resultedTrucks addObject:biggerArr[i]];
-        }
-    }
-    
-    return resultedTrucks;
-    
-}
-
-- (NSMutableArray*)convertRemovedTruckObjectsToAnnotation:(NSMutableArray*)FoodTrucks {
-    NSMutableArray* convertedToAnnotations = [[NSMutableArray alloc] init];
-    for (int i=0; i<FoodTrucks.count; i++) {
-        MKPointAnnotation* annotation= [MKPointAnnotation new];
-        PFUser *tempTruck = FoodTrucks[i];
-        PFGeoPoint *temp = tempTruck[@"truckLocation"];
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
-        annotation.coordinate = coord;
-        annotation.title = tempTruck[@"fullName"];
-        [convertedToAnnotations addObject:annotation];
-    }
-    return convertedToAnnotations;
 }
 
 - (MKMarkerAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -176,25 +125,114 @@
      return annotationView;
  }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
+        
+        // [self fetchFoodTrucks:self.filterArguments];
+
+    }
+}
+
+- (void)addAnnotationsToMap {
+    for (int i=0; i<self.arrayOfFoodTrucks.count; i++) {
+        MKPointAnnotation* annotation= [MKPointAnnotation new];
+        PFUser *tempTruck = self.arrayOfFoodTrucks[i];
+        PFGeoPoint *temp = tempTruck[@"truckLocation"];
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
+        annotation.coordinate = coord;
+        annotation.title = tempTruck[@"fullName"];
+        [self.mapView addAnnotation:annotation];
+        [self.arrayOfAnnotations addObject:annotation];
+    }
+}
+
+- (NSMutableArray*)removeExcessTrucks:(NSArray*)smallerArr removeExcessIn:(NSMutableArray*)biggerArr{
+    
+    NSMutableDictionary *objectIDtoTruck = [[NSMutableDictionary alloc] init];
+    NSMutableArray *trucksToBeRemoved = [[NSMutableArray alloc] init];
+    self.annotationsToBeRemoved = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < smallerArr.count; i++){
+        PFUser *currTruck = smallerArr[i];
+        [objectIDtoTruck setObject:currTruck forKey:currTruck.objectId];
+    }
+    
+    for (int i = 0; i < biggerArr.count; i++){
+        PFUser *currTruck = biggerArr[i];
+        
+        if ( ![objectIDtoTruck objectForKey:currTruck.objectId] ){
+            [trucksToBeRemoved addObject:biggerArr[i]];
+            [self.annotationsToBeRemoved setObject:currTruck forKey:currTruck[@"fullName"]];
+        }
+        
+        else {
+            [objectIDtoTruck removeObjectForKey:currTruck.objectId];
+        }
+        
+    }
+    
+    NSMutableArray *newTrucksLeftover = [[objectIDtoTruck allValues] mutableCopy];
+    NSMutableArray *newAnnotations = [self convertRemovedTruckObjectsToAnnotation:newTrucksLeftover];
+    [self.mapView addAnnotations:newAnnotations];
+    
+    return trucksToBeRemoved;
+    
+}
+
+- (void)findAndRemoveAnnotations {
+    
+    NSArray *annotationsOnMap = self.mapView.annotations;
+    
+    for (int i = 0; i < annotationsOnMap.count; i++){
+        MKPointAnnotation *mapPoint = annotationsOnMap[i];
+        
+        if ([self.annotationsToBeRemoved objectForKey:mapPoint.title]){
+            [self.mapView removeAnnotation:mapPoint];
+        }
+        
+    }
+    
+}
+
+- (NSMutableArray*)convertRemovedTruckObjectsToAnnotation:(NSMutableArray*)FoodTrucks {
+    NSMutableArray* convertedToAnnotations = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i<FoodTrucks.count; i++) {
+        
+        MKPointAnnotation* annotation= [MKPointAnnotation new];
+        PFUser *tempTruck = FoodTrucks[i];
+        PFGeoPoint *temp = tempTruck[@"truckLocation"];
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
+        
+        annotation.coordinate = coord;
+        annotation.title = tempTruck[@"fullName"];
+        
+        [convertedToAnnotations addObject:annotation];
+    }
+    
+    return convertedToAnnotations;
+}
+
 - (void)fetchFoodTrucks:(NSArray*)filters {
     PFQuery *UserQuery = [PFUser query];
-    // [UserQuery fromLocalDatastore];
     
-//    // 360 degress, 400m to edge of region
-//    double degreeChangeFromCenter = 360 * 400 / EARTHCIRUMFERENCE;
-//
-//    // moving west increases long, moving south increases lat
-//    PFGeoPoint *southwestCorner = [PFGeoPoint geoPointWithLatitude:self.mapView.centerCoordinate.latitude + degreeChangeFromCenter longitude:self.mapView.centerCoordinate.longitude + degreeChangeFromCenter];
-//
-//    PFGeoPoint *northwestCorner = [PFGeoPoint geoPointWithLatitude:self.mapView.centerCoordinate.latitude - degreeChangeFromCenter longitude:self.mapView.centerCoordinate.longitude - degreeChangeFromCenter];
-//
-//    [UserQuery whereKey:@"truckLocation" withinGeoBoxFromSouthwest:southwestCorner toNortheast:northwestCorner];
+    // 360 degress, 1000m zone
+    long double degreeChangeFromCenter = 360.0 * 1000.0 / EARTHCIRUMFERENCE;
+
+    // moving west increases long, moving south increases lat
+    PFGeoPoint *southwestCorner = [PFGeoPoint geoPointWithLatitude:self.mapView.centerCoordinate.latitude + degreeChangeFromCenter longitude:self.mapView.centerCoordinate.longitude + degreeChangeFromCenter];
+
+    PFGeoPoint *northwestCorner = [PFGeoPoint geoPointWithLatitude:self.mapView.centerCoordinate.latitude - degreeChangeFromCenter longitude:self.mapView.centerCoordinate.longitude - degreeChangeFromCenter];
+
+    [UserQuery whereKey:@"truckLocation" withinGeoBoxFromSouthwest:southwestCorner toNortheast:northwestCorner];
     
     NSNumber *trueValue = [NSNumber numberWithBool:true];
     
-    // NSLog(@"INDEX 0: %@", [filters objectAtIndex:0]);
     if ([filters objectAtIndex:0] == trueValue){
-        //NSLog(@"INSIDE PIZZA KEY");
         [UserQuery whereKey:@"pizzaType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:1] == trueValue){
@@ -216,57 +254,46 @@
     [UserQuery whereKey:@"userType" equalTo:@"FoodTruck"];
     [UserQuery includeKey:@"author"];
     UserQuery.limit = 50;
-    UserQuery.cachePolicy = kPFCachePolicyNetworkElseCache;
 
-    //if (![UserQuery hasCachedResult]){
-        [UserQuery findObjectsInBackgroundWithBlock:^(NSArray<PFUser *> * _Nullable users, NSError * _Nullable error) {
+    [UserQuery findObjectsInBackgroundWithBlock:^(NSArray<PFUser *> * _Nullable users, NSError * _Nullable error) {
             if (users) {
-                // if arrayOfFoodTrucks is empty and the returned users array doesn't equal arrayOfFoodTrucks
-                NSLog(@"users count: %lu", users.count);
-                NSLog(@"truck count: %lu", self.arrayOfFoodTrucks.count);
                 if (![users isEqualToArray:self.arrayOfFoodTrucks]){
                     
                     if (users.count < self.arrayOfFoodTrucks.count){
+                        
                         NSMutableArray *trucksToRemove = [self.arrayOfFoodTrucks mutableCopy];
-                        // NSMutableArray *trucksToRemove = [[NSMutableArray alloc] initWithArray:self.arrayOfFoodTrucks copyItems:YES];
-                        //NSLog(@"to remove: %lu", trucksToRemove.count);
-                        //NSLog(@"%@", users);
-                        //NSLog(@"%@", trucksToRemove);
-                        trucksToRemove = [self removeDuplicateTrucks:users removeFrom:trucksToRemove];
-                        //[trucksToRemove removeObjectsInArray:users];
-                        NSLog(@"%lu", self.mapView.annotations.count);
-                        NSMutableArray *annotationsToRemove = [self convertRemovedTruckObjectsToAnnotation:trucksToRemove];
-                        [self.mapView removeAnnotations:annotationsToRemove];
-                        NSLog(@"%lu", self.mapView.annotations.count);
+                        trucksToRemove = [self removeExcessTrucks:users removeExcessIn:trucksToRemove];
+                        [self findAndRemoveAnnotations];
                         [self.arrayOfFoodTrucks removeObjectsInArray:trucksToRemove];
+                        self.arrayOfAnnotations = [self.mapView.annotations mutableCopy];
+                        
                     }
                     
                     else if (users.count > self.arrayOfFoodTrucks.count){
+                        
                         NSMutableArray *trucksToAdd = [users mutableCopy];
-                        // NSMutableArray *trucksToAdd = [[NSMutableArray alloc] initWithArray:users copyItems:YES];
-                        //NSLog(@"%lu", trucksToAdd.count);
                         [trucksToAdd removeObjectsInArray:self.arrayOfFoodTrucks];
-                        //NSLog(@"%lu", trucksToAdd.count);
+                        [self.arrayOfFoodTrucks addObjectsFromArray:trucksToAdd];
                         NSMutableArray *annotationsToAdd = [self convertRemovedTruckObjectsToAnnotation:trucksToAdd];
-                        //NSLog(@"%lu", annotationsToAdd.count);
-                        NSLog(@"%lu", self.mapView.annotations.count);
                         [self.mapView addAnnotations:annotationsToAdd];
                         self.arrayOfAnnotations = [self.mapView.annotations mutableCopy];
-                        NSLog(@"%lu", self.mapView.annotations.count);
                         
-                        //add objects from array is not working
-                        [self.arrayOfFoodTrucks addObjectsFromArray:trucksToAdd];
-                        //NSLog(@"%lu", self.arrayOfFoodTrucks.count);
+                    }
+                    
+                    else if (users.count == self.arrayOfFoodTrucks.count){
+                        
+                        [self.mapView removeAnnotations:self.mapView.annotations];
+                        NSMutableArray *newAnnotations = [self convertRemovedTruckObjectsToAnnotation:[users mutableCopy]];
+                        [self.mapView addAnnotations:newAnnotations];
+                        
                     }
                 }
-                
-                //NSLog(@"TRUCKS in ARR FOOD TRUCK: %lu", self.arrayOfFoodTrucks.count);
             }
+            
             else {
                 NSLog(@"Cannot fetch data");
             }
         }];
-    //}
 }
 
 
@@ -274,9 +301,13 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     MapFiltersViewController *filtersVC = [segue destinationViewController];
+    
     filtersVC.arrayOfFilters = self.filterArguments;
     filtersVC.formerFoodTrucks = self.arrayOfFoodTrucks;
+    
+    [self.arrayOfAnnotations removeObject:self.mapView.userLocation];
     filtersVC.formerTruckAnnotations = self.arrayOfAnnotations;
 }
 

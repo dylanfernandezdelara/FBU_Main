@@ -26,6 +26,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.pizzaFilter.on = [self.arrayOfFilters[0] boolValue];
+    self.bbqFilter.on = [self.arrayOfFilters[1] boolValue];
+    self.brunchFilter.on = [self.arrayOfFilters[2] boolValue];
+    self.mexicanFilter.on = [self.arrayOfFilters[3] boolValue];
+    self.seafoodFilter.on = [self.arrayOfFilters[4] boolValue];
+    self.sandwichesFilter.on = [self.arrayOfFilters[5] boolValue];
+    
+    if ([self.arrayOfFilters[6] intValue] != 2){
+        self.popularFilter.on = [self.arrayOfFilters[6] boolValue];
+    }
+    
+    if ([self.arrayOfFilters[7] intValue] != 2){
+        self.priceRangeSegment.selectedSegmentIndex = [self.arrayOfFilters[7] intValue];
+    }
+    
 }
 
 #pragma mark - Navigation
@@ -47,7 +63,7 @@
     self.arrayOfFilters[7] = [NSNumber numberWithInteger:self.priceRangeSegment.selectedSegmentIndex];
     
     if ([segue.identifier isEqualToString:@"applyFiltersSegue"]){
-        NSLog(@"RIGHT BEFORE SEGUE HAPPENS: %@", self.arrayOfFilters);
+
         UserMapViewController *userMapView = [segue destinationViewController];
         userMapView.filterArguments = self.arrayOfFilters;
         userMapView.arrayOfFoodTrucks = self.formerFoodTrucks;
