@@ -68,6 +68,9 @@
 
 @property (strong, nonatomic) PFUser *tappedTruck;
 
+@property (strong, nonatomic) NSNumber *showLabels;
+@property (strong, nonatomic) NSNumber *hideLabels;
+
 @end
 
 @implementation UserMapViewController
@@ -87,29 +90,12 @@
     self.favoriteCount.layer.masksToBounds = true;
     self.favoriteCount.alpha = 0;
     
-    self.sunLabel.alpha = 0;
-    self.monLabel.alpha = 0;
-    self.tueLabel.alpha = 0;
-    self.wedLabel.alpha = 0;
-    self.thuLabel.alpha = 0;
-    self.friLabel.alpha = 0;
-    self.satLabel.alpha = 0;
+    NSNumber *trueValue = [NSNumber numberWithBool:true];
+    NSNumber *falseValue = [NSNumber numberWithBool:false];
+    self.showLabels = trueValue;
+    self.hideLabels = falseValue;
     
-    self.sunOpenLabel.alpha = 0;
-    self.monOpenLabel.alpha = 0;
-    self.tueOpenLabel.alpha = 0;
-    self.wedOpenLabel.alpha = 0;
-    self.thuOpenLabel.alpha = 0;
-    self.friOpenLabel.alpha = 0;
-    self.satOpenLabel.alpha = 0;
-    
-    self.sunCloseLabel.alpha = 0;
-    self.monCloseLabel.alpha = 0;
-    self.tueCloseLabel.alpha = 0;
-    self.wedCloseLabel.alpha = 0;
-    self.thuCloseLabel.alpha = 0;
-    self.friCloseLabel.alpha = 0;
-    self.satCloseLabel.alpha = 0;
+    [self setAlphaValuesForLabels:self.hideLabels];
     
     UIPanGestureRecognizer* dragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(isMapDoneMoving:)];
         [dragRecognizer setDelegate:self];
@@ -123,48 +109,91 @@
              [self.locationManager requestWhenInUseAuthorization];
          }
     [self.locationManager startUpdatingLocation];
+    
     self.mapView.showsUserLocation = YES;
-    
     [self.mapView setCenterCoordinate:self.locationManager.location.coordinate animated:true];
-    
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.locationManager.location.coordinate, 400, 400);
     [self.mapView setRegion:region];
     
     if (self.filterArguments.count != 8){
-        NSMutableArray *initArrOfAnnotations = [[NSMutableArray alloc] init];
-        NSMutableArray *initArrOfTrucks = [[NSMutableArray alloc] init];
-        NSMutableDictionary *initDictOfTrucks = [[NSMutableDictionary alloc] init];
-        
-        self.arrayOfAnnotations = initArrOfAnnotations;
-        self.arrayOfFoodTrucks = initArrOfTrucks;
-        self.dictOfFoodTrucks = initDictOfTrucks;
-        
-        self.pizzaFilter = false;
-        self.bbqFilter = false;
-        self.brunchFilter = false;
-        self.mexicanFilter = false;
-        self.seafoodFilter = false;
-        self.sandwichesFilter = false;
-        
-        NSMutableArray *defaultArguments = [[NSMutableArray alloc] init];
-        [defaultArguments addObject:[NSNumber numberWithBool:self.pizzaFilter]];
-        [defaultArguments addObject:[NSNumber numberWithBool:self.bbqFilter]];
-        [defaultArguments addObject:[NSNumber numberWithBool:self.brunchFilter]];
-        [defaultArguments addObject:[NSNumber numberWithBool:self.mexicanFilter]];
-        [defaultArguments addObject:[NSNumber numberWithBool:self.seafoodFilter]];
-        [defaultArguments addObject:[NSNumber numberWithBool:self.sandwichesFilter]];
-        
-        [defaultArguments addObject:[NSNumber numberWithInteger:0]];
-        [defaultArguments addObject:[NSNumber numberWithInteger:0]];
-        
-        self.filterArguments = defaultArguments;
+        [self initFiltersArray_initAnnotationsArray_initTruckDict];
     }
-    
     else {
         [self.mapView addAnnotations:self.arrayOfAnnotations];
-        
     }
 
+    [self initFavoriteTrucksArray];
+    
+    [self fetchFoodTrucks:self.filterArguments];
+}
+
+- (void)setAlphaValuesForLabels:(NSNumber*)shouldDisplay {
+    
+        self.favoriteButton.alpha = shouldDisplay.intValue;
+        self.favoriteCount.alpha = shouldDisplay.intValue;
+
+        self.sunLabel.alpha = shouldDisplay.intValue;
+        self.monLabel.alpha = shouldDisplay.intValue;
+        self.tueLabel.alpha = shouldDisplay.intValue;
+        self.wedLabel.alpha = shouldDisplay.intValue;
+        self.thuLabel.alpha = shouldDisplay.intValue;
+        self.friLabel.alpha = shouldDisplay.intValue;
+        self.satLabel.alpha = shouldDisplay.intValue;
+
+        self.sunOpenLabel.alpha = shouldDisplay.intValue;
+        self.monOpenLabel.alpha = shouldDisplay.intValue;
+        self.tueOpenLabel.alpha = shouldDisplay.intValue;
+        self.wedOpenLabel.alpha = shouldDisplay.intValue;
+        self.thuOpenLabel.alpha = shouldDisplay.intValue;
+        self.friOpenLabel.alpha = shouldDisplay.intValue;
+        self.satOpenLabel.alpha = shouldDisplay.intValue;
+
+        self.sunCloseLabel.alpha = shouldDisplay.intValue;
+        self.monCloseLabel.alpha = shouldDisplay.intValue;
+        self.tueCloseLabel.alpha = shouldDisplay.intValue;
+        self.wedCloseLabel.alpha = shouldDisplay.intValue;
+        self.thuCloseLabel.alpha = shouldDisplay.intValue;
+        self.friCloseLabel.alpha = shouldDisplay.intValue;
+        self.satCloseLabel.alpha = shouldDisplay.intValue;
+
+        self.truckName.alpha = shouldDisplay.intValue;
+        self.truckDescription.alpha = shouldDisplay.intValue;
+}
+
+- (void)initFiltersArray_initAnnotationsArray_initTruckDict {
+    
+    NSMutableArray *initArrOfAnnotations = [[NSMutableArray alloc] init];
+    NSMutableArray *initArrOfTrucks = [[NSMutableArray alloc] init];
+    NSMutableDictionary *initDictOfTrucks = [[NSMutableDictionary alloc] init];
+    
+    self.arrayOfAnnotations = initArrOfAnnotations;
+    self.arrayOfFoodTrucks = initArrOfTrucks;
+    self.dictOfFoodTrucks = initDictOfTrucks;
+    
+    self.pizzaFilter = false;
+    self.bbqFilter = false;
+    self.brunchFilter = false;
+    self.mexicanFilter = false;
+    self.seafoodFilter = false;
+    self.sandwichesFilter = false;
+    
+    NSMutableArray *defaultArguments = [[NSMutableArray alloc] init];
+    [defaultArguments addObject:[NSNumber numberWithBool:self.pizzaFilter]];
+    [defaultArguments addObject:[NSNumber numberWithBool:self.bbqFilter]];
+    [defaultArguments addObject:[NSNumber numberWithBool:self.brunchFilter]];
+    [defaultArguments addObject:[NSNumber numberWithBool:self.mexicanFilter]];
+    [defaultArguments addObject:[NSNumber numberWithBool:self.seafoodFilter]];
+    [defaultArguments addObject:[NSNumber numberWithBool:self.sandwichesFilter]];
+    
+    [defaultArguments addObject:[NSNumber numberWithInteger:0]];
+    [defaultArguments addObject:[NSNumber numberWithInteger:0]];
+    
+    self.filterArguments = defaultArguments;
+    
+}
+
+- (void)initFavoriteTrucksArray {
+    
     PFUser *currUser = [PFUser currentUser];
     if (currUser[@"favoritedTrucks"] == nil){
         NSMutableArray *initFavorites = [[NSMutableArray alloc] init];
@@ -174,33 +203,50 @@
         self.favoritedTrucks = currUser[@"favoritedTrucks"];
     }
     
-    [self fetchFoodTrucks:self.filterArguments];
 }
 
 - (void)addTrucksArrayToDictionary:(NSMutableArray*)truckArr {
-    
     for (int i = 0; i < truckArr.count; i++){
         
         PFUser *currTruck = truckArr[i];
         [self.dictOfFoodTrucks setObject:currTruck forKey:currTruck[@"fullName"]];
         
     }
-    
 }
 
 - (void)removeTrucksArrayFromDictionary:(NSMutableArray*)truckArr {
-    
     for (int i = 0; i < truckArr.count; i++){
         
         PFUser *currTruck = truckArr[i];
         [self.dictOfFoodTrucks removeObjectForKey:currTruck[@"fullName"]];
         
     }
-    
 }
 
-- (void)mapView:(MKMapView *)mapView
-didSelectAnnotationView:(MKAnnotationView *)view{
+- (void)setTextLabelsWhenTruckPressed: (PFUser*)pressedTruck {
+    self.truckName.text = pressedTruck[@"fullName"];
+    self.truckDescription.text = pressedTruck[@"truckDescription"];
+    
+    self.sunOpenLabel.text = pressedTruck[@"sunOpenTime"];
+    self.monOpenLabel.text = pressedTruck[@"monOpenTime"];
+    self.tueOpenLabel.text = pressedTruck[@"tueOpenTime"];
+    self.wedOpenLabel.text = pressedTruck[@"wedOpenTime"];
+    self.thuOpenLabel.text = pressedTruck[@"thuOpenTime"];
+    self.friOpenLabel.text = pressedTruck[@"friOpenTime"];
+    self.satOpenLabel.text = pressedTruck[@"satOpenTime"];
+
+    self.sunCloseLabel.text = pressedTruck[@"sunCloseTime"];
+    self.monCloseLabel.text = pressedTruck[@"monCloseTime"];
+    self.tueCloseLabel.text = pressedTruck[@"tueCloseTime"];
+    self.wedCloseLabel.text = pressedTruck[@"wedCloseTime"];
+    self.thuCloseLabel.text = pressedTruck[@"thuCloseTime"];
+    self.friCloseLabel.text = pressedTruck[@"friCloseTime"];
+    self.satCloseLabel.text = pressedTruck[@"satCloseTime"];
+    
+    self.favoriteCount.text = [pressedTruck[@"favoriteCount"] stringValue];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
     if (self.cluster){
         
         MKClusterAnnotation *cluster = (MKClusterAnnotation*) view.annotation;
@@ -219,138 +265,43 @@ didSelectAnnotationView:(MKAnnotationView *)view{
             self.favoriteButton.selected = true;
             self.initiallyFavorited = true;
         }
-        
         else {
             self.favoriteButton.selected = false;
             self.initiallyFavorited = false;
         }
         
-        self.truckName.text = pressedTruck[@"fullName"];
-        self.truckDescription.text = pressedTruck[@"truckDescription"];
-        
-        self.sunOpenLabel.text = pressedTruck[@"sunOpenTime"];
-        self.monOpenLabel.text = pressedTruck[@"monOpenTime"];
-        self.tueOpenLabel.text = pressedTruck[@"tueOpenTime"];
-        self.wedOpenLabel.text = pressedTruck[@"wedOpenTime"];
-        self.thuOpenLabel.text = pressedTruck[@"thuOpenTime"];
-        self.friOpenLabel.text = pressedTruck[@"friOpenTime"];
-        self.satOpenLabel.text = pressedTruck[@"satOpenTime"];
-
-        self.sunCloseLabel.text = pressedTruck[@"sunCloseTime"];
-        self.monCloseLabel.text = pressedTruck[@"monCloseTime"];
-        self.tueCloseLabel.text = pressedTruck[@"tueCloseTime"];
-        self.wedCloseLabel.text = pressedTruck[@"wedCloseTime"];
-        self.thuCloseLabel.text = pressedTruck[@"thuCloseTime"];
-        self.friCloseLabel.text = pressedTruck[@"friCloseTime"];
-        self.satCloseLabel.text = pressedTruck[@"satCloseTime"];
-        
-        self.favoriteCount.text = [pressedTruck[@"favoriteCount"] stringValue];
-        self.favoriteCount.alpha = 1;
-
-        self.sunLabel.alpha = 1;
-        self.monLabel.alpha = 1;
-        self.tueLabel.alpha = 1;
-        self.wedLabel.alpha = 1;
-        self.thuLabel.alpha = 1;
-        self.friLabel.alpha = 1;
-        self.satLabel.alpha = 1;
-
-        self.sunOpenLabel.alpha = 1;
-        self.monOpenLabel.alpha = 1;
-        self.tueOpenLabel.alpha = 1;
-        self.wedOpenLabel.alpha = 1;
-        self.thuOpenLabel.alpha = 1;
-        self.friOpenLabel.alpha = 1;
-        self.satOpenLabel.alpha = 1;
-
-        self.sunCloseLabel.alpha = 1;
-        self.monCloseLabel.alpha = 1;
-        self.tueCloseLabel.alpha = 1;
-        self.wedCloseLabel.alpha = 1;
-        self.thuCloseLabel.alpha = 1;
-        self.friCloseLabel.alpha = 1;
-        self.satCloseLabel.alpha = 1;
-
-        self.truckName.alpha = 1;
-        self.truckDescription.alpha = 1;
-
-        self.favoriteButton.alpha = 1;
-        
+        [self setAlphaValuesForLabels:self.showLabels];
+        [self setTextLabelsWhenTruckPressed:pressedTruck];
     }
 }
 
 - (void)mapView:(MKMapView *)mapView
 didDeselectAnnotationView:(MKAnnotationView *)view{
     
+    [self setAlphaValuesForLabels:self.hideLabels];
+    
     PFUser *loggedInUser = [PFUser currentUser];
-    
     loggedInUser[@"favoritedTrucks"] = self.favoritedTrucks;
-    
     [[PFUser currentUser] saveInBackground];
     
     PFUser *pressedTruck = [self.dictOfFoodTrucks objectForKey:view.annotation.title];
-    
-    self.favoriteCount.alpha = 0;
-    
-    self.sunLabel.alpha = 0;
-    self.monLabel.alpha = 0;
-    self.tueLabel.alpha = 0;
-    self.wedLabel.alpha = 0;
-    self.thuLabel.alpha = 0;
-    self.friLabel.alpha = 0;
-    self.satLabel.alpha = 0;
-    
-    self.sunOpenLabel.alpha = 0;
-    self.monOpenLabel.alpha = 0;
-    self.tueOpenLabel.alpha = 0;
-    self.wedOpenLabel.alpha = 0;
-    self.thuOpenLabel.alpha = 0;
-    self.friOpenLabel.alpha = 0;
-    self.satOpenLabel.alpha = 0;
-    
-    self.sunCloseLabel.alpha = 0;
-    self.monCloseLabel.alpha = 0;
-    self.tueCloseLabel.alpha = 0;
-    self.wedCloseLabel.alpha = 0;
-    self.thuCloseLabel.alpha = 0;
-    self.friCloseLabel.alpha = 0;
-    self.satCloseLabel.alpha = 0;
-    
-    self.truckName.alpha = 0;
-    self.truckDescription.alpha = 0;
-    
-    self.favoriteButton.alpha = 0;
-    
     NSNumber *newLikesCount = [NSNumber numberWithInteger:[self.favoriteCount.text integerValue]];
-    
     NSDictionary *params = @{@"objectId" : pressedTruck.objectId,
                                 @"favoriteCount" : newLikesCount};
     
-    if (self.favoriteButton.selected && (self.initiallyFavorited != self.favoriteButton.selected)){
-        
-        [PFCloud callFunctionInBackground:@"incrementLikes" withParameters:params block:^(id object, NSError *error) {
-                if (!error){
-                    NSLog(@"Success");
-                }
-               }];
-        
-    }
-    else if (self.initiallyFavorited != self.favoriteButton.selected){
-        
-        [PFCloud callFunctionInBackground:@"decrementLikes" withParameters:params block:^(id object, NSError *error) {
-                if (!error){
-                    NSLog(@"Success");
-                }
-               }];
-        
-    }
+    BOOL didInitialFavoritedValueChange = self.initiallyFavorited != self.favoriteButton.selected;
     
+    if (self.favoriteButton.selected && didInitialFavoritedValueChange){
+        [PFCloud callFunctionInBackground:@"incrementLikes" withParameters:params block:^(id object, NSError *error) {}];
+    }
+    else if (didInitialFavoritedValueChange){
+        [PFCloud callFunctionInBackground:@"decrementLikes" withParameters:params block:^(id object, NSError *error) {}];
+    }
 }
 
 - (IBAction)favoritePressed:(UIButton *)sender {
     
     sender.selected = !sender.selected;
-    
     if (sender.selected){
         
         self.favoriteCount.text = @([self.favoriteCount.text integerValue]+1).stringValue ;
@@ -400,9 +351,7 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
 
 - (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        
-        // [self fetchFoodTrucks:self.filterArguments];
-
+        [self fetchFoodTrucks:self.filterArguments];
     }
 }
 
@@ -444,29 +393,27 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
     return YES;
 }
 
-- (NSMutableArray*)removeExcessTrucks:(NSArray*)smallerArr removeExcessIn:(NSMutableArray*)biggerArr{
+- (NSMutableArray*)removeExcessTrucks:(NSArray*)upToDateTruckArray removeExcessIn:(NSMutableArray*)oldTruckArray{
     
     NSMutableDictionary *objectIDtoTruck = [[NSMutableDictionary alloc] init];
     NSMutableArray *trucksToBeRemoved = [[NSMutableArray alloc] init];
     self.annotationsToBeRemoved = [[NSMutableDictionary alloc] init];
     
-    for (int i = 0; i < smallerArr.count; i++){
-        PFUser *currTruck = smallerArr[i];
+    for (int i = 0; i < upToDateTruckArray.count; i++){
+        PFUser *currTruck = upToDateTruckArray[i];
         [objectIDtoTruck setObject:currTruck forKey:currTruck.objectId];
     }
     
-    for (int i = 0; i < biggerArr.count; i++){
-        PFUser *currTruck = biggerArr[i];
+    for (int i = 0; i < oldTruckArray.count; i++){
+        PFUser *currTruck = oldTruckArray[i];
         
         if ( ![objectIDtoTruck objectForKey:currTruck.objectId] ){
-            [trucksToBeRemoved addObject:biggerArr[i]];
+            [trucksToBeRemoved addObject:oldTruckArray[i]];
             [self.annotationsToBeRemoved setObject:currTruck forKey:currTruck[@"fullName"]];
         }
-        
         else {
             [objectIDtoTruck removeObjectForKey:currTruck.objectId];
         }
-        
     }
     
     NSMutableArray *newTrucksLeftover = [[objectIDtoTruck allValues] mutableCopy];
@@ -474,11 +421,10 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
     [self.mapView addAnnotations:newAnnotations];
     
     return trucksToBeRemoved;
-    
 }
 
 - (void)fetchFoodTrucks:(NSArray*)filters {
-    PFQuery *UserQuery = [PFUser query];
+    PFQuery *TruckQuery = [PFUser query];
     
     // 360 degress, 1000m zone
     long double degreeChangeFromCenter = 360.0 * 1000.0 / EARTHCIRUMFERENCE;
@@ -488,42 +434,40 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
 
     PFGeoPoint *northwestCorner = [PFGeoPoint geoPointWithLatitude:self.mapView.centerCoordinate.latitude - degreeChangeFromCenter longitude:self.mapView.centerCoordinate.longitude - degreeChangeFromCenter];
 
-    [UserQuery whereKey:@"truckLocation" withinGeoBoxFromSouthwest:southwestCorner toNortheast:northwestCorner];
+    [TruckQuery whereKey:@"truckLocation" withinGeoBoxFromSouthwest:southwestCorner toNortheast:northwestCorner];
     
     NSNumber *trueValue = [NSNumber numberWithBool:true];
     
     if ([filters objectAtIndex:0] == trueValue){
-        [UserQuery whereKey:@"pizzaType" equalTo:trueValue];
+        [TruckQuery whereKey:@"pizzaType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:1] == trueValue){
-        [UserQuery whereKey:@"bbqType" equalTo:trueValue];
+        [TruckQuery whereKey:@"bbqType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:2] == trueValue){
-        [UserQuery whereKey:@"brunchType" equalTo:trueValue];
+        [TruckQuery whereKey:@"brunchType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:3] == trueValue){
-        [UserQuery whereKey:@"mexicanType" equalTo:trueValue];
+        [TruckQuery whereKey:@"mexicanType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:4] == trueValue){
-        [UserQuery whereKey:@"seafoodType" equalTo:trueValue];
+        [TruckQuery whereKey:@"seafoodType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:5] == trueValue){
-        [UserQuery whereKey:@"sandwichesType" equalTo:trueValue];
+        [TruckQuery whereKey:@"sandwichesType" equalTo:trueValue];
     }
     if ([filters objectAtIndex:6] == trueValue){
-        // for popular
-        [UserQuery orderByDescending:@"favoriteCount"];
-        UserQuery.limit = 20;
+        [TruckQuery orderByDescending:@"favoriteCount"];
+        TruckQuery.limit = 20;
     }
     
     NSNumber *priceLevel = [self.filterArguments objectAtIndex:7];
-    NSLog(@"%@", priceLevel);
-    [UserQuery whereKey:@"priceLevel" equalTo:priceLevel];
+    [TruckQuery whereKey:@"priceLevel" equalTo:priceLevel];
     
-    [UserQuery whereKey:@"userType" equalTo:@"FoodTruck"];
-    [UserQuery includeKey:@"author"];
+    [TruckQuery whereKey:@"userType" equalTo:@"FoodTruck"];
+    [TruckQuery includeKey:@"author"];
 
-    [UserQuery findObjectsInBackgroundWithBlock:^(NSArray<PFUser *> * _Nullable users, NSError * _Nullable error) {
+    [TruckQuery findObjectsInBackgroundWithBlock:^(NSArray<PFUser *> * _Nullable users, NSError * _Nullable error) {
             if (users) {
                 if (![users isEqualToArray:self.arrayOfFoodTrucks]){
                     

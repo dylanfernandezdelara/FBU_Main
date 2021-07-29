@@ -47,10 +47,10 @@ template = {
       "bbqType": False,
       "seafoodType": False,
       "brunchType": True,
+      "favoriteCount": 0,
       "ACL": {
         "*": {
           "read": True
-          "write": True
         },
         "LG6EtQ0AiP": {
           "read": True,
@@ -83,6 +83,7 @@ for x in range(numberOfTrucks):
     temp["brunchType"] = random.choice(arrrayOfBool)
 
     temp["priceLevel"] = random.randint(0, 2)
+    temp["favoriteCount"] = random.randint(0, 99)
 
     arrayOfDicts.append(temp)
 
