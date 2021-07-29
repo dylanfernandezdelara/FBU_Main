@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray *arrayOfFilters;
 @property (strong, nonatomic) NSMutableArray *formerFoodTrucks;
 @property (strong, nonatomic) NSMutableArray *formerTruckAnnotations;
+@property (strong, nonatomic) NSMutableDictionary *formerDictOfFoodTrucks;
 @property (strong, nonatomic) NSMutableArray *formerFavoritedTrucks;
 
 @end

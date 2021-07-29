@@ -154,8 +154,8 @@
         [defaultArguments addObject:[NSNumber numberWithBool:self.seafoodFilter]];
         [defaultArguments addObject:[NSNumber numberWithBool:self.sandwichesFilter]];
         
-        [defaultArguments addObject:[NSNumber numberWithInteger:2]];
-        [defaultArguments addObject:[NSNumber numberWithInteger:2]];
+        [defaultArguments addObject:[NSNumber numberWithInteger:0]];
+        [defaultArguments addObject:[NSNumber numberWithInteger:0]];
         
         self.filterArguments = defaultArguments;
     }
@@ -284,7 +284,6 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
     
     PFUser *loggedInUser = [PFUser currentUser];
     
-    NSLog(@"%@", self.favoritedTrucks);
     loggedInUser[@"favoritedTrucks"] = self.favoritedTrucks;
     
     [[PFUser currentUser] saveInBackground];
@@ -356,7 +355,6 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
         
         self.favoriteCount.text = @([self.favoriteCount.text integerValue]+1).stringValue ;
         self.tappedTruck[@"favoriteCount"] = [NSNumber numberWithInteger:[self.favoriteCount.text integerValue]];
-        NSLog(@"%@", self.tappedTruck.objectId);
         [self.favoritedTrucks addObject:self.tappedTruck.objectId];
         
     }
@@ -512,10 +510,18 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
     if ([filters objectAtIndex:5] == trueValue){
         [UserQuery whereKey:@"sandwichesType" equalTo:trueValue];
     }
+    if ([filters objectAtIndex:6] == trueValue){
+        // for popular
+        [UserQuery orderByDescending:@"favoriteCount"];
+        UserQuery.limit = 20;
+    }
+    
+    NSNumber *priceLevel = [self.filterArguments objectAtIndex:7];
+    NSLog(@"%@", priceLevel);
+    [UserQuery whereKey:@"priceLevel" equalTo:priceLevel];
     
     [UserQuery whereKey:@"userType" equalTo:@"FoodTruck"];
     [UserQuery includeKey:@"author"];
-    UserQuery.limit = 50;
 
     [UserQuery findObjectsInBackgroundWithBlock:^(NSArray<PFUser *> * _Nullable users, NSError * _Nullable error) {
             if (users) {
@@ -571,6 +577,7 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
     filtersVC.arrayOfFilters = self.filterArguments;
     filtersVC.formerFoodTrucks = self.arrayOfFoodTrucks;
     filtersVC.formerFavoritedTrucks = self.favoritedTrucks;
+    filtersVC.formerDictOfFoodTrucks = self.dictOfFoodTrucks;
     
     [self.arrayOfAnnotations removeObject:self.mapView.userLocation];
     filtersVC.formerTruckAnnotations = self.arrayOfAnnotations;

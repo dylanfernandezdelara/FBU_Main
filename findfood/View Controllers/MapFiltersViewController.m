@@ -68,6 +68,8 @@
         userMapView.filterArguments = self.arrayOfFilters;
         userMapView.arrayOfFoodTrucks = self.formerFoodTrucks;
         userMapView.arrayOfAnnotations = self.formerTruckAnnotations;
+        userMapView.dictOfFoodTrucks = self.formerDictOfFoodTrucks;
+        userMapView.favoritedTrucks = self.formerFavoritedTrucks;
         
     }
     
