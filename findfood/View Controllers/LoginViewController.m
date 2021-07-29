@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -22,6 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithHexString:@"FFFEE5"];
+    self.username.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
+    self.password.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
+    
+    self.signUpButton.layer.cornerRadius = 5;
+    self.signUpButton.layer.masksToBounds = true;
+    self.signUpButton.backgroundColor = [UIColor colorWithHexString:@"3B5B33"];
+    
+    self.loginButton.layer.cornerRadius = 5;
+    self.loginButton.layer.masksToBounds = true;
+    self.loginButton.backgroundColor = [UIColor colorWithHexString:@"3B5B33"];
 }
 
 - (IBAction)signUpNow:(UIButton *)sender {

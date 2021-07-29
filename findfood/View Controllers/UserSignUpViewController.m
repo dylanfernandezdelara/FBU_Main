@@ -7,6 +7,7 @@
 
 #import "UserSignUpViewController.h"
 #import "Parse/Parse.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface UserSignUpViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -33,6 +34,15 @@
             [self.profilePhotoButton setImage:thumbnailImageView.image forState:UIControlStateNormal];
             }];
     }
+    
+    self.profilePhotoButton.layer.cornerRadius = 5;
+    self.profilePhotoButton.layer.masksToBounds = true;
+    self.profilePhotoButton.backgroundColor = [UIColor colorWithHexString:@"3B5B33"];
+    
+    self.saveButton.layer.cornerRadius = 5;
+    self.saveButton.layer.masksToBounds = true;
+    self.saveButton.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
+    self.saveButton.tintColor = [UIColor colorWithHexString:@"3B5B33"];
 }
 
 - (IBAction)saveNow:(UIButton *)sender {

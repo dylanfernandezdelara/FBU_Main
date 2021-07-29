@@ -7,6 +7,7 @@
 
 #import "ParentSignUpViewController.h"
 #import "Parse/Parse.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface ParentSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UIView *truckContainerView;
@@ -30,6 +31,13 @@
         self.segmentControl.alpha = 0.0;
     }
     
+
+    self.segmentControl.selectedSegmentTintColor = [UIColor colorWithHexString:@"3B5B33"];
+    self.segmentControl.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
+    
+    NSDictionary *attributes = @{ NSFontAttributeName : [UIFont boldSystemFontOfSize:15], NSForegroundColorAttributeName : [UIColor flatWhiteColor] };
+    [self.segmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
 }
 
 - (IBAction)didChangeIndex:(UISegmentedControl *)sender {
@@ -37,10 +45,12 @@
         case 0:
             self.userContainerView.alpha = 1.0;
             self.truckContainerView.alpha = 0.0;
+            self.segmentControl.selectedSegmentTintColor = [UIColor colorWithHexString:@"3B5B33"];
             break;
         case 1:
             self.userContainerView.alpha = 0.0;
             self.truckContainerView.alpha = 1.0;
+            self.segmentControl.selectedSegmentTintColor = [UIColor colorWithHexString:@"3B5B33"];
             break;
         default:
             break;

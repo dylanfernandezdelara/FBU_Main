@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-findfood/Pods-findfood-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/BRYSerialAnimationQueue/BRYSerialAnimationQueue.framework
 ${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework
 ${BUILT_PRODUCTS_DIR}/SSBouncyButton/SSBouncyButton.framework
 ${BUILT_PRODUCTS_DIR}/UIColor-Hex/UIColor_Hex.framework
