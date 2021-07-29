@@ -10,12 +10,17 @@
 #import "UserMapViewController.h"
 #import "Parse/Parse.h"
 #import "MapFiltersViewController.h"
+#import "SSBouncyButton.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #define EARTHCIRUMFERENCE 4007500.0
 
 @interface UserMapViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
+
+@property (weak, nonatomic) IBOutlet SSBouncyButton *favoriteButton;
+@property (assign, nonatomic) BOOL initiallyFavorited;
+@property (weak, nonatomic) IBOutlet UILabel *favoriteCount;
 
 @property (weak, nonatomic) IBOutlet UILabel *truckName;
 @property (weak, nonatomic) IBOutlet UILabel *truckDescription;
@@ -59,6 +64,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *friCloseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *satCloseLabel;
 
+@property (assign, nonatomic) BOOL cluster;
+
+@property (strong, nonatomic) PFUser *tappedTruck;
+
 @end
 
 @implementation UserMapViewController
@@ -67,6 +76,16 @@
     [super viewDidLoad];
     
     self.mapView.delegate = self;
+    
+    self.favoriteButton.alpha = 0;
+    [self.favoriteButton setTitle:@"favorite" forState:UIControlStateNormal];
+    [self.favoriteButton setTitle:@"favorited" forState:UIControlStateSelected];
+    self.favoriteButton.tintColor = UIColorFromRGB(0x3B5B33);
+    
+    self.favoriteCount.backgroundColor = UIColorFromRGB(0x3B5B33);
+    self.favoriteCount.layer.cornerRadius = 5;
+    self.favoriteCount.layer.masksToBounds = true;
+    self.favoriteCount.alpha = 0;
     
     self.sunLabel.alpha = 0;
     self.monLabel.alpha = 0;
@@ -142,11 +161,19 @@
     }
     
     else {
-        
         [self.mapView addAnnotations:self.arrayOfAnnotations];
         
     }
 
+    PFUser *currUser = [PFUser currentUser];
+    if (currUser[@"favoritedTrucks"] == nil){
+        NSMutableArray *initFavorites = [[NSMutableArray alloc] init];
+        self.favoritedTrucks = initFavorites;
+    }
+    else {
+        self.favoritedTrucks = currUser[@"favoritedTrucks"];
+    }
+    
     [self fetchFoodTrucks:self.filterArguments];
 }
 
@@ -174,15 +201,30 @@
 
 - (void)mapView:(MKMapView *)mapView
 didSelectAnnotationView:(MKAnnotationView *)view{
-    if ([view.clusteringIdentifier isEqualToString:@"MKMarkerAnnotationView"]){
+    if (self.cluster){
         
         MKClusterAnnotation *cluster = (MKClusterAnnotation*) view.annotation;
         [mapView showAnnotations:cluster.memberAnnotations animated:YES];
+        self.cluster = false;
     
     }
     else {
-        
         PFUser *pressedTruck = [self.dictOfFoodTrucks objectForKey:view.annotation.title];
+        self.tappedTruck = pressedTruck;
+        
+        PFUser *loggedInUser = [PFUser currentUser];
+        NSMutableArray *userFavorites = loggedInUser[@"favoritedTrucks"];
+        
+        if ([userFavorites containsObject:pressedTruck.objectId]){
+            self.favoriteButton.selected = true;
+            self.initiallyFavorited = true;
+        }
+        
+        else {
+            self.favoriteButton.selected = false;
+            self.initiallyFavorited = false;
+        }
+        
         self.truckName.text = pressedTruck[@"fullName"];
         self.truckDescription.text = pressedTruck[@"truckDescription"];
         
@@ -193,7 +235,7 @@ didSelectAnnotationView:(MKAnnotationView *)view{
         self.thuOpenLabel.text = pressedTruck[@"thuOpenTime"];
         self.friOpenLabel.text = pressedTruck[@"friOpenTime"];
         self.satOpenLabel.text = pressedTruck[@"satOpenTime"];
-        
+
         self.sunCloseLabel.text = pressedTruck[@"sunCloseTime"];
         self.monCloseLabel.text = pressedTruck[@"monCloseTime"];
         self.tueCloseLabel.text = pressedTruck[@"tueCloseTime"];
@@ -202,6 +244,9 @@ didSelectAnnotationView:(MKAnnotationView *)view{
         self.friCloseLabel.text = pressedTruck[@"friCloseTime"];
         self.satCloseLabel.text = pressedTruck[@"satCloseTime"];
         
+        self.favoriteCount.text = [pressedTruck[@"favoriteCount"] stringValue];
+        self.favoriteCount.alpha = 1;
+
         self.sunLabel.alpha = 1;
         self.monLabel.alpha = 1;
         self.tueLabel.alpha = 1;
@@ -209,7 +254,7 @@ didSelectAnnotationView:(MKAnnotationView *)view{
         self.thuLabel.alpha = 1;
         self.friLabel.alpha = 1;
         self.satLabel.alpha = 1;
-        
+
         self.sunOpenLabel.alpha = 1;
         self.monOpenLabel.alpha = 1;
         self.tueOpenLabel.alpha = 1;
@@ -217,7 +262,7 @@ didSelectAnnotationView:(MKAnnotationView *)view{
         self.thuOpenLabel.alpha = 1;
         self.friOpenLabel.alpha = 1;
         self.satOpenLabel.alpha = 1;
-        
+
         self.sunCloseLabel.alpha = 1;
         self.monCloseLabel.alpha = 1;
         self.tueCloseLabel.alpha = 1;
@@ -225,12 +270,28 @@ didSelectAnnotationView:(MKAnnotationView *)view{
         self.thuCloseLabel.alpha = 1;
         self.friCloseLabel.alpha = 1;
         self.satCloseLabel.alpha = 1;
+
+        self.truckName.alpha = 1;
+        self.truckDescription.alpha = 1;
+
+        self.favoriteButton.alpha = 1;
         
     }
 }
 
 - (void)mapView:(MKMapView *)mapView
 didDeselectAnnotationView:(MKAnnotationView *)view{
+    
+    PFUser *loggedInUser = [PFUser currentUser];
+    
+    NSLog(@"%@", self.favoritedTrucks);
+    loggedInUser[@"favoritedTrucks"] = self.favoritedTrucks;
+    
+    [[PFUser currentUser] saveInBackground];
+    
+    PFUser *pressedTruck = [self.dictOfFoodTrucks objectForKey:view.annotation.title];
+    
+    self.favoriteCount.alpha = 0;
     
     self.sunLabel.alpha = 0;
     self.monLabel.alpha = 0;
@@ -256,6 +317,68 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
     self.friCloseLabel.alpha = 0;
     self.satCloseLabel.alpha = 0;
     
+    self.truckName.alpha = 0;
+    self.truckDescription.alpha = 0;
+    
+    self.favoriteButton.alpha = 0;
+    
+    NSNumber *newLikesCount = [NSNumber numberWithInteger:[self.favoriteCount.text integerValue]];
+    
+    NSDictionary *params = @{@"objectId" : pressedTruck.objectId,
+                                @"favoriteCount" : newLikesCount};
+    
+    if (self.favoriteButton.selected && (self.initiallyFavorited != self.favoriteButton.selected)){
+        
+        [PFCloud callFunctionInBackground:@"incrementLikes" withParameters:params block:^(id object, NSError *error) {
+                if (!error){
+                    NSLog(@"Success");
+                }
+               }];
+        
+    }
+    else if (self.initiallyFavorited != self.favoriteButton.selected){
+        
+        [PFCloud callFunctionInBackground:@"decrementLikes" withParameters:params block:^(id object, NSError *error) {
+                if (!error){
+                    NSLog(@"Success");
+                }
+               }];
+        
+    }
+    
+}
+
+- (IBAction)favoritePressed:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    
+    if (sender.selected){
+        
+        self.favoriteCount.text = @([self.favoriteCount.text integerValue]+1).stringValue ;
+        self.tappedTruck[@"favoriteCount"] = [NSNumber numberWithInteger:[self.favoriteCount.text integerValue]];
+        NSLog(@"%@", self.tappedTruck.objectId);
+        [self.favoritedTrucks addObject:self.tappedTruck.objectId];
+        
+    }
+    else {
+        
+        self.favoriteCount.text = @([self.favoriteCount.text integerValue]-1).stringValue ;
+        self.tappedTruck[@"favoriteCount"] = [NSNumber numberWithInteger:[self.favoriteCount.text integerValue]];
+        [self.favoritedTrucks removeObject:self.tappedTruck.objectId];
+        
+    }
+    
+}
+
+- (MKClusterAnnotation *)mapView:(MKMapView *)mapView
+clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotations{
+    
+    MKClusterAnnotation* currCluster = [[MKClusterAnnotation alloc] initWithMemberAnnotations:memberAnnotations];
+    if (memberAnnotations.count > 1){
+        self.cluster = true;
+    }
+    return currCluster;
+    
 }
 
 - (MKMarkerAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -268,7 +391,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
      
     if (annotationView == nil) {
          annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MKMarkerAnnotationView"];
-         annotationView.clusteringIdentifier = @"MKMarkerAnnotationView";
+         annotationView.clusteringIdentifier = @"cluster";
      }
     
      annotationView.markerTintColor = UIColorFromRGB(0x3B5B33);
@@ -447,6 +570,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
     
     filtersVC.arrayOfFilters = self.filterArguments;
     filtersVC.formerFoodTrucks = self.arrayOfFoodTrucks;
+    filtersVC.formerFavoritedTrucks = self.favoritedTrucks;
     
     [self.arrayOfAnnotations removeObject:self.mapView.userLocation];
     filtersVC.formerTruckAnnotations = self.arrayOfAnnotations;

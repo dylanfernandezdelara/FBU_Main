@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray *arrayOfFoodTrucks;
 @property (strong, nonatomic) NSMutableArray *arrayOfAnnotations;
 @property (strong, nonatomic) NSMutableDictionary *dictOfFoodTrucks;
+@property (strong, nonatomic) NSMutableArray *favoritedTrucks;
 
 @end
 

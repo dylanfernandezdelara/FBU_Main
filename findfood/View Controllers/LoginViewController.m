@@ -28,6 +28,7 @@
     PFUser *newUser = [PFUser user];
     newUser.username = self.username.text;
     newUser.password = self.password.text;
+    newUser[@"favoriteCount"] = [NSNumber numberWithInteger:0];
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);

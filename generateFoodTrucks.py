@@ -50,6 +50,7 @@ template = {
       "ACL": {
         "*": {
           "read": True
+          "write": True
         },
         "LG6EtQ0AiP": {
           "read": True,

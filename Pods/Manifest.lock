@@ -1,22 +1,38 @@
 PODS:
   - Bolts/Tasks (1.9.1)
+  - BRYSerialAnimationQueue (1.0.0)
   - Parse (1.19.2):
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
+  - SSBouncyButton (1.0.7):
+    - BRYSerialAnimationQueue (~> 1.0)
+    - UIColor-Hex (~> 0.1)
+    - "UIImage+BetterAdditions (~> 2.0)"
+  - UIColor-Hex (0.1.1)
+  - "UIImage+BetterAdditions (2.0.3)"
 
 DEPENDENCIES:
   - Parse
+  - SSBouncyButton (~> 1.0)
 
 SPEC REPOS:
   trunk:
     - Bolts
+    - BRYSerialAnimationQueue
     - Parse
+    - SSBouncyButton
+    - UIColor-Hex
+    - "UIImage+BetterAdditions"
 
 SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  BRYSerialAnimationQueue: 75feef56345338619a6c2111f2a81de28a59c368
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  SSBouncyButton: 90f6da63da6c6d32f9dab4928b80632b427d871a
+  UIColor-Hex: 77e80f383c6b3a63c5e95a9a4a7f4a71976e38a5
+  "UIImage+BetterAdditions": 185cbe06059747dd4a65562c1b0c560e761d030c
 
-PODFILE CHECKSUM: a87c71532fd17ff2a0b30b06647c9f3bb297bdaa
+PODFILE CHECKSUM: 9254f12626af8ac228ac0674b94fc5ee3ed77421
 
 COCOAPODS: 1.10.1
