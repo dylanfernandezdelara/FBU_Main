@@ -27,6 +27,8 @@
 		6E182D39269F38AF00E69EBD /* FTruckProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D38269F38AF00E69EBD /* FTruckProfileViewController.m */; };
 		6E182D3C26A08AF800E69EBD /* LocationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */; };
 		6E182D3F26A0B9B400E69EBD /* AddressResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */; };
+		6E2851E726B49FBE00CD6713 /* UserHomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851E626B49FBE00CD6713 /* UserHomeTabViewController.m */; };
+		6E2851EA26B49FEC00CD6713 /* UserMapNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851E926B49FEC00CD6713 /* UserMapNavigationViewController.m */; };
 		6E4CE82D26A9C9BB00479F2A /* MapFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4CE82C26A9C9BB00479F2A /* MapFiltersViewController.m */; };
 		6E7743EB26A1E4AE00C02DA0 /* FTruckHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */; };
 		6E7743EE26A7701E00C02DA0 /* FTruckCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743ED26A7701E00C02DA0 /* FTruckCategoryViewController.m */; };
@@ -90,6 +92,10 @@
 		6E182D3B26A08AF800E69EBD /* LocationSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSearchViewController.m; sourceTree = "<group>"; };
 		6E182D3D26A0B9B400E69EBD /* AddressResultsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressResultsCell.h; sourceTree = "<group>"; };
 		6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressResultsCell.m; sourceTree = "<group>"; };
+		6E2851E526B49FBE00CD6713 /* UserHomeTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserHomeTabViewController.h; sourceTree = "<group>"; };
+		6E2851E626B49FBE00CD6713 /* UserHomeTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserHomeTabViewController.m; sourceTree = "<group>"; };
+		6E2851E826B49FEC00CD6713 /* UserMapNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserMapNavigationViewController.h; sourceTree = "<group>"; };
+		6E2851E926B49FEC00CD6713 /* UserMapNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserMapNavigationViewController.m; sourceTree = "<group>"; };
 		6E4CE82B26A9C9BB00479F2A /* MapFiltersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapFiltersViewController.h; sourceTree = "<group>"; };
 		6E4CE82C26A9C9BB00479F2A /* MapFiltersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapFiltersViewController.m; sourceTree = "<group>"; };
 		6E7743E926A1E4AE00C02DA0 /* FTruckHoursViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTruckHoursViewController.h; sourceTree = "<group>"; };
@@ -218,6 +224,10 @@
 				6E7743ED26A7701E00C02DA0 /* FTruckCategoryViewController.m */,
 				6E4CE82B26A9C9BB00479F2A /* MapFiltersViewController.h */,
 				6E4CE82C26A9C9BB00479F2A /* MapFiltersViewController.m */,
+				6E2851E526B49FBE00CD6713 /* UserHomeTabViewController.h */,
+				6E2851E626B49FBE00CD6713 /* UserHomeTabViewController.m */,
+				6E2851E826B49FEC00CD6713 /* UserMapNavigationViewController.h */,
+				6E2851E926B49FEC00CD6713 /* UserMapNavigationViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -499,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2851EA26B49FEC00CD6713 /* UserMapNavigationViewController.m in Sources */,
 				6E182D1F269DEB5100E69EBD /* UserProfileViewController.m in Sources */,
 				6E182D22269DF16B00E69EBD /* DetailsViewController.m in Sources */,
 				6E182D10269CFF1600E69EBD /* LoginViewController.m in Sources */,
@@ -514,6 +525,7 @@
 				6E01E131269CF8CB00CAB045 /* SceneDelegate.m in Sources */,
 				6E182D3F26A0B9B400E69EBD /* AddressResultsCell.m in Sources */,
 				6E182D1C269DEB3600E69EBD /* UserMapViewController.m in Sources */,
+				6E2851E726B49FBE00CD6713 /* UserHomeTabViewController.m in Sources */,
 				6E182D16269D035200E69EBD /* FTruckSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

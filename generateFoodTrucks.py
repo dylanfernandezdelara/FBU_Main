@@ -25,7 +25,6 @@ template = {
         "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
         "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
       },
-      "numClicks": 0,
       "friOpenTime": "08:00",
       "thuOpenTime": "08:00",
       "monCloseTime": "05:00",
@@ -73,7 +72,6 @@ for x in range(numberOfTrucks):
     temp["truckLocation"]["latitude"] = round(29.6670002 + (x / random.randint(1000, 10000)), 7)
     temp["truckLocation"]["longitude"] = round(-98.4254288 + (x / random.randint(1000, 10000)), 7)
     temp["email"] = "truck" + str(x) + "@gmail.com"
-    temp["numClicks"] = random.randint(0, 1000)
 
     temp["mexicanType"] = random.choice(arrrayOfBool)
     temp["pizzaType"] = random.choice(arrrayOfBool)

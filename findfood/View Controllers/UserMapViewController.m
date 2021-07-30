@@ -64,12 +64,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *friCloseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *satCloseLabel;
 
-@property (assign, nonatomic) BOOL cluster;
-
 @property (strong, nonatomic) PFUser *tappedTruck;
 
 @property (strong, nonatomic) NSNumber *showLabels;
 @property (strong, nonatomic) NSNumber *hideLabels;
+
+@property (weak, nonatomic) IBOutlet UILabel *pressTruckForInfoLabel;
 
 @end
 
@@ -158,6 +158,8 @@
 
         self.truckName.alpha = shouldDisplay.intValue;
         self.truckDescription.alpha = shouldDisplay.intValue;
+    
+        self.pressTruckForInfoLabel.alpha = !shouldDisplay.intValue;
 }
 
 - (void)initFiltersArray_initAnnotationsArray_initTruckDict {
@@ -253,14 +255,11 @@
         
         MKClusterAnnotation *cluster = (MKClusterAnnotation*) view.annotation;
         [mapView showAnnotations:cluster.memberAnnotations animated:YES];
-        self.cluster = false;
     
     }
     else {
         PFUser *pressedTruck = [self.dictOfFoodTrucks objectForKey:view.annotation.title];
         self.tappedTruck = pressedTruck;
-        NSLog(@"PRESSED %@", pressedTruck.objectId);
-        NSLog(@"%@", self.dictOfFoodTrucks);
         
         PFUser *loggedInUser = [PFUser currentUser];
         NSMutableArray *userFavorites = loggedInUser[@"favoritedTrucks"];
@@ -344,7 +343,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
 
 - (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        // [self fetchFoodTrucks:self.filterArguments];
+         [self fetchFoodTrucks:self.filterArguments];
     }
 }
 
@@ -419,8 +418,8 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
 - (void)fetchFoodTrucks:(NSArray*)filters {
     PFQuery *TruckQuery = [PFUser query];
     
-    // 360 degress, 1000m zone
-    long double degreeChangeFromCenter = 360.0 * 1000.0 / EARTHCIRUMFERENCE;
+    // 360 degress, 10000m zone
+    long double degreeChangeFromCenter = 360.0 * 10000.0 / EARTHCIRUMFERENCE;
 
     // moving west increases long, moving south increases lat
     PFGeoPoint *southwestCorner = [PFGeoPoint geoPointWithLatitude:self.mapView.centerCoordinate.latitude + degreeChangeFromCenter longitude:self.mapView.centerCoordinate.longitude + degreeChangeFromCenter];

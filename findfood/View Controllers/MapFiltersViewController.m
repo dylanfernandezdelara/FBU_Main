@@ -7,6 +7,8 @@
 
 #import "MapFiltersViewController.h"
 #import "UserMapViewController.h"
+#import "UserHomeTabViewController.h"
+#import "UserMapNavigationViewController.h"
 
 @interface MapFiltersViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *pizzaFilter;
@@ -63,8 +65,11 @@
     self.arrayOfFilters[7] = [NSNumber numberWithInteger:self.priceRangeSegment.selectedSegmentIndex];
     
     if ([segue.identifier isEqualToString:@"applyFiltersSegue"]){
-
-        UserMapViewController *userMapView = [segue destinationViewController];
+        
+        UITabBarController *nav = segue.destinationViewController;
+        UserMapNavigationViewController *navToMapView = [nav.viewControllers objectAtIndex:0];
+        UserMapViewController *userMapView = [navToMapView.childViewControllers objectAtIndex:0];
+        
         userMapView.filterArguments = self.arrayOfFilters;
         userMapView.arrayOfFoodTrucks = self.formerFoodTrucks;
         userMapView.arrayOfAnnotations = self.formerTruckAnnotations;
