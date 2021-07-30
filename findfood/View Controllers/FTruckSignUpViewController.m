@@ -25,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *recognizeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:recognizeTap];
+    recognizeTap.cancelsTouchesInView = NO;
+    
     PFUser *currUser =  [PFUser currentUser];
     if (currUser[@"fullName"] != nil && currUser[@"email"] != nil && currUser[@"truckDescription"] != nil && currUser[@"Image"] != nil && currUser[@"detailsImage"] != nil){
         
@@ -62,6 +67,11 @@
     self.saveButton.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
     self.saveButton.tintColor = [UIColor colorWithHexString:@"3B5B33"];
     
+}
+
+- (void)hideKeyboard
+{
+     [self.view endEditing:YES];
 }
 
 - (IBAction)saveNow:(UIButton *)sender {

@@ -23,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *recognizeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:recognizeTap];
+    recognizeTap.cancelsTouchesInView = NO;
+    
     self.view.backgroundColor = [UIColor colorWithHexString:@"FFFEE5"];
     self.username.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
     self.password.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
@@ -34,6 +38,11 @@
     self.loginButton.layer.cornerRadius = 5;
     self.loginButton.layer.masksToBounds = true;
     self.loginButton.backgroundColor = [UIColor colorWithHexString:@"3B5B33"];
+}
+
+- (void)hideKeyboard
+{
+     [self.view endEditing:YES];
 }
 
 - (IBAction)signUpNow:(UIButton *)sender {

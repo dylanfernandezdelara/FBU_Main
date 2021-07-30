@@ -247,7 +247,9 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
-    if (self.cluster){
+    
+    NSString *annotationClass = NSStringFromClass(view.annotation.class);
+    if ([annotationClass isEqualToString:@"MKClusterAnnotation"]){
         
         MKClusterAnnotation *cluster = (MKClusterAnnotation*) view.annotation;
         [mapView showAnnotations:cluster.memberAnnotations animated:YES];
@@ -257,6 +259,8 @@
     else {
         PFUser *pressedTruck = [self.dictOfFoodTrucks objectForKey:view.annotation.title];
         self.tappedTruck = pressedTruck;
+        NSLog(@"PRESSED %@", pressedTruck.objectId);
+        NSLog(@"%@", self.dictOfFoodTrucks);
         
         PFUser *loggedInUser = [PFUser currentUser];
         NSMutableArray *userFavorites = loggedInUser[@"favoritedTrucks"];
@@ -319,17 +323,6 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
     
 }
 
-- (MKClusterAnnotation *)mapView:(MKMapView *)mapView
-clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotations{
-    
-    MKClusterAnnotation* currCluster = [[MKClusterAnnotation alloc] initWithMemberAnnotations:memberAnnotations];
-    if (memberAnnotations.count > 1){
-        self.cluster = true;
-    }
-    return currCluster;
-    
-}
-
 - (MKMarkerAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
     if ([annotation.title isEqualToString:@"My Location"]){
@@ -351,7 +344,7 @@ clusterAnnotationForMemberAnnotations:(NSArray<id<MKAnnotation>> *)memberAnnotat
 
 - (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        [self fetchFoodTrucks:self.filterArguments];
+        // [self fetchFoodTrucks:self.filterArguments];
     }
 }
 
