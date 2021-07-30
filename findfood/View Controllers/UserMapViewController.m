@@ -10,6 +10,7 @@
 #import "UserMapViewController.h"
 #import "Parse/Parse.h"
 #import "MapFiltersViewController.h"
+#import "DetailsViewController.h"
 #import "SSBouncyButton.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -71,12 +72,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *pressTruckForInfoLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *moveToDetailsView;
+
 @end
 
 @implementation UserMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
     
     self.mapView.delegate = self;
     
@@ -129,37 +133,38 @@
 
 - (void)setAlphaValuesForLabels:(NSNumber*)shouldDisplay {
     
-        self.favoriteButton.alpha = shouldDisplay.intValue;
-        self.favoriteCount.alpha = shouldDisplay.intValue;
+    self.favoriteButton.alpha = shouldDisplay.intValue;
+    self.favoriteCount.alpha = shouldDisplay.intValue;
 
-        self.sunLabel.alpha = shouldDisplay.intValue;
-        self.monLabel.alpha = shouldDisplay.intValue;
-        self.tueLabel.alpha = shouldDisplay.intValue;
-        self.wedLabel.alpha = shouldDisplay.intValue;
-        self.thuLabel.alpha = shouldDisplay.intValue;
-        self.friLabel.alpha = shouldDisplay.intValue;
-        self.satLabel.alpha = shouldDisplay.intValue;
+    self.sunLabel.alpha = shouldDisplay.intValue;
+    self.monLabel.alpha = shouldDisplay.intValue;
+    self.tueLabel.alpha = shouldDisplay.intValue;
+    self.wedLabel.alpha = shouldDisplay.intValue;
+    self.thuLabel.alpha = shouldDisplay.intValue;
+    self.friLabel.alpha = shouldDisplay.intValue;
+    self.satLabel.alpha = shouldDisplay.intValue;
 
-        self.sunOpenLabel.alpha = shouldDisplay.intValue;
-        self.monOpenLabel.alpha = shouldDisplay.intValue;
-        self.tueOpenLabel.alpha = shouldDisplay.intValue;
-        self.wedOpenLabel.alpha = shouldDisplay.intValue;
-        self.thuOpenLabel.alpha = shouldDisplay.intValue;
-        self.friOpenLabel.alpha = shouldDisplay.intValue;
-        self.satOpenLabel.alpha = shouldDisplay.intValue;
+    self.sunOpenLabel.alpha = shouldDisplay.intValue;
+    self.monOpenLabel.alpha = shouldDisplay.intValue;
+    self.tueOpenLabel.alpha = shouldDisplay.intValue;
+    self.wedOpenLabel.alpha = shouldDisplay.intValue;
+    self.thuOpenLabel.alpha = shouldDisplay.intValue;
+    self.friOpenLabel.alpha = shouldDisplay.intValue;
+    self.satOpenLabel.alpha = shouldDisplay.intValue;
 
-        self.sunCloseLabel.alpha = shouldDisplay.intValue;
-        self.monCloseLabel.alpha = shouldDisplay.intValue;
-        self.tueCloseLabel.alpha = shouldDisplay.intValue;
-        self.wedCloseLabel.alpha = shouldDisplay.intValue;
-        self.thuCloseLabel.alpha = shouldDisplay.intValue;
-        self.friCloseLabel.alpha = shouldDisplay.intValue;
-        self.satCloseLabel.alpha = shouldDisplay.intValue;
+    self.sunCloseLabel.alpha = shouldDisplay.intValue;
+    self.monCloseLabel.alpha = shouldDisplay.intValue;
+    self.tueCloseLabel.alpha = shouldDisplay.intValue;
+    self.wedCloseLabel.alpha = shouldDisplay.intValue;
+    self.thuCloseLabel.alpha = shouldDisplay.intValue;
+    self.friCloseLabel.alpha = shouldDisplay.intValue;
+    self.satCloseLabel.alpha = shouldDisplay.intValue;
 
-        self.truckName.alpha = shouldDisplay.intValue;
-        self.truckDescription.alpha = shouldDisplay.intValue;
+    self.truckName.alpha = shouldDisplay.intValue;
+    self.truckDescription.alpha = shouldDisplay.intValue;
     
-        self.pressTruckForInfoLabel.alpha = !shouldDisplay.intValue;
+    self.pressTruckForInfoLabel.alpha = !shouldDisplay.intValue;
+    self.moveToDetailsView.alpha = shouldDisplay.intValue;
 }
 
 - (void)initFiltersArray_initAnnotationsArray_initTruckDict {
@@ -508,15 +513,22 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    MapFiltersViewController *filtersVC = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"toFilters"]){
+        MapFiltersViewController *filtersVC = [segue destinationViewController];
+        
+        filtersVC.arrayOfFilters = self.filterArguments;
+        filtersVC.formerFoodTrucks = self.arrayOfFoodTrucks;
+        filtersVC.formerFavoritedTrucks = self.favoritedTrucks;
+        filtersVC.formerDictOfFoodTrucks = self.dictOfFoodTrucks;
+        
+        [self.arrayOfAnnotations removeObject:self.mapView.userLocation];
+        filtersVC.formerTruckAnnotations = self.arrayOfAnnotations;
+    }
     
-    filtersVC.arrayOfFilters = self.filterArguments;
-    filtersVC.formerFoodTrucks = self.arrayOfFoodTrucks;
-    filtersVC.formerFavoritedTrucks = self.favoritedTrucks;
-    filtersVC.formerDictOfFoodTrucks = self.dictOfFoodTrucks;
-    
-    [self.arrayOfAnnotations removeObject:self.mapView.userLocation];
-    filtersVC.formerTruckAnnotations = self.arrayOfAnnotations;
+    else if ([segue.identifier isEqualToString:@"toDetailsView"]){
+        DetailsViewController *detailsVC = [segue destinationViewController];
+        detailsVC.currentTruckViewed = self.tappedTruck;
+    }
 }
 
 
