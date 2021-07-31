@@ -7,11 +7,13 @@ SPRINT WEEK 1 PROGRESS:
 
 General User:
 
-![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/65196174/126182088-331f866a-9c6c-4d35-9b79-9b2864a085fa.gif)
+![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/65196174/127723743-a057e22c-a526-485d-960b-eee1b1c8a6e7.gif)
+
+![ezgif com-gif-maker (14)](https://user-images.githubusercontent.com/65196174/127723866-695231b7-f839-4e4d-afa2-a54e70a896bb.gif)
 
 Food Truck:
 
-![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/65196174/126182105-ab78a872-dcde-4e32-ac70-71db450d8c5a.gif)
+![ezgif com-gif-maker (13)](https://user-images.githubusercontent.com/65196174/127723811-f8fb0aa7-ba7b-4db2-99d9-c5a347fb6a98.gif)
 
 ## Table of Contents
 1. [Overview](#Overview)
