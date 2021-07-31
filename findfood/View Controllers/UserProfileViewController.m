@@ -9,11 +9,13 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface UserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hiNameLabel;
 
 @end
 
@@ -21,17 +23,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PFUser *currUser = [PFUser currentUser];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"FFFEE5"];
     
+    [self setProfilePhoto];
+    
+    [self setProfileLabels];
+}
+
+- (void)setProfilePhoto {
+    PFUser *currUser = [PFUser currentUser];
     PFFileObject *temp_file = currUser[@"Image"];
     [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
             UIImage *thumbnailImage = [UIImage imageWithData:imageData];
             UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
             self.profilePicture.image = thumbnailImageView.image;
         }];
-    
-    self.nameLabel.text = currUser[@"fullName"];
+    self.profilePicture.layer.cornerRadius = 10;
+    self.profilePicture.layer.masksToBounds = true;
+}
+
+-(void)setProfileLabels {
+    PFUser *currUser = [PFUser currentUser];
+    self.nameLabel.text = [@"@" stringByAppendingString:currUser[@"username"]];
     self.emailLabel.text = currUser[@"email"];
+    self.hiNameLabel.text = [@"Hi," stringByAppendingString:currUser[@"fullName"]];
 }
 
 - (IBAction)logoutNow:(UIButton *)sender {

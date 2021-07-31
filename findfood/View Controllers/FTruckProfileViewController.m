@@ -9,6 +9,7 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface FTruckProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *truckName;
 @property (weak, nonatomic) IBOutlet UILabel *truckEmail;
 @property (weak, nonatomic) IBOutlet UILabel *truckDescription;
+@property (weak, nonatomic) IBOutlet UILabel *hiNameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *sunOpenLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monOpenLabel;
@@ -33,30 +35,26 @@
 @property (weak, nonatomic) IBOutlet UILabel *friCloseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *satCloseLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *numberOfLikesLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *separatorImage;
+
 @end
 
 @implementation FTruckProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithHexString:@"FFFEE5"];
+    self.separatorImage.backgroundColor = [UIColor colorWithHexString:@"3B5B33"];
+
+    [self setPhotos];
+    [self setLabels];
+}
+
+- (void)setLabels {
     PFUser *currUser = [PFUser currentUser];
-    
-    PFFileObject *temp_file = currUser[@"Image"];
-    [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
-            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
-            self.profilePhoto.image = thumbnailImageView.image;
-        }];
-    
-    PFFileObject *tempDetailsFile = currUser[@"detailsImage"];
-    [tempDetailsFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
-            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
-            self.foodPhoto.image = thumbnailImageView.image;
-        }];
-    
-    self.truckName.text = currUser[@"fullName"];
+    self.hiNameLabel.text = [@"Hi," stringByAppendingString:currUser[@"fullName"]];
+    self.truckName.text = [@"@" stringByAppendingString:currUser[@"username"]];
     self.truckEmail.text = currUser[@"email"];
     self.truckDescription.text = currUser[@"truckDescription"];
     
@@ -75,6 +73,28 @@
     self.thuCloseLabel.text = currUser[@"thuCloseTime"];
     self.friCloseLabel.text = currUser[@"friCloseTime"];
     self.satCloseLabel.text = currUser[@"satCloseTime"];
+    
+    self.numberOfLikesLabel.text = [currUser[@"favoriteCount"] stringValue];
+}
+
+- (void)setPhotos {
+    PFUser *currUser = [PFUser currentUser];
+    PFFileObject *temp_file = currUser[@"Image"];
+    [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            self.profilePhoto.image = thumbnailImageView.image;
+        }];
+    PFFileObject *tempDetailsFile = currUser[@"detailsImage"];
+    [tempDetailsFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            self.foodPhoto.image = thumbnailImageView.image;
+        }];
+    self.profilePhoto.layer.cornerRadius = 10;
+    self.profilePhoto.layer.masksToBounds = true;
+    self.foodPhoto.layer.cornerRadius = 10;
+    self.foodPhoto.layer.masksToBounds = true;
 }
 
 - (IBAction)logoutNow:(UIButton *)sender {
