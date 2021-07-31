@@ -2,8 +2,7 @@ Original App Design Project - README Template
 ===
 
 # FindFood
-
-SPRINT WEEK 1 PROGRESS:
+Latest Gifs:
 
 General User:
 
