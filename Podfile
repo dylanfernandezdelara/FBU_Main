@@ -9,6 +9,7 @@ target 'findfood' do
   pod 'Parse'
   pod 'SSBouncyButton', '~> 1.0'
   pod 'ChameleonFramework'
+  pod 'HCSStarRatingView', '~> 1.5'
 
   target 'findfoodTests' do
     inherit! :search_paths
