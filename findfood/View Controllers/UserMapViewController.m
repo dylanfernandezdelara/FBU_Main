@@ -414,6 +414,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
     }
     
     NSMutableArray *newTrucksLeftover = [[objectIDtoTruck allValues] mutableCopy];
+    [self addTrucksArrayToDictionary:newTrucksLeftover];
     NSMutableArray *newAnnotations = [self convertRemovedTruckObjectsToAnnotation:newTrucksLeftover];
     [self.mapView addAnnotations:newAnnotations];
     
@@ -495,6 +496,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
                         
                         [self.mapView removeAnnotations:self.mapView.annotations];
                         NSMutableArray *newAnnotations = [self convertRemovedTruckObjectsToAnnotation:[users mutableCopy]];
+                        [self addTrucksArrayToDictionary:[users mutableCopy]];
                         [self.mapView addAnnotations:newAnnotations];
                         
                     }

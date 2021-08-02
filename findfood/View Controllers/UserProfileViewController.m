@@ -10,12 +10,15 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import <ChameleonFramework/Chameleon.h>
+#import "FavoritedTrucksCell.h"
 
-@interface UserProfileViewController ()
+@interface UserProfileViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hiNameLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSMutableArray *favoritedTrucks;
 
 @end
 
@@ -25,9 +28,32 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithHexString:@"FFFEE5"];
     
-    [self setProfilePhoto];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
     
+    [self setProfilePhoto];
     [self setProfileLabels];
+    
+    [self getUserFavoriteTrucks];
+}
+
+- (void)getUserFavoriteTrucks {
+    PFUser *currUser = [PFUser currentUser];
+    NSArray *favoritedTrucksIDs = currUser[@"favoritedTrucks"];
+    self.favoritedTrucks = [[NSMutableArray alloc] init];
+    
+    PFQuery *truckQuery = [PFUser query];
+    [truckQuery whereKey:@"objectId" containedIn:favoritedTrucksIDs];
+
+    [truckQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects){
+            for (int i = 0; i < objects.count; i++){
+                PFUser *truck = objects[i];
+                [self.favoritedTrucks addObject:truck];
+            }
+            [self.collectionView reloadData];
+        }
+    }];
 }
 
 - (void)setProfilePhoto {
@@ -69,4 +95,29 @@
 }
 */
 
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    FavoritedTrucksCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FavoritedTrucksCell" forIndexPath:indexPath];
+    PFUser *truck = self.favoritedTrucks[indexPath.row];
+    
+    cell.layer.cornerRadius = 20;
+    cell.layer.masksToBounds = true;
+    cell.backgroundColor = [UIColor colorWithHexString:@"B6D2AF"];
+    
+    cell.truckName.text = truck[@"fullName"];
+    cell.numLikesLabel.text = [truck[@"favoriteCount"] stringValue];
+    
+    PFFileObject *temp_file = truck[@"Image"];
+    [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            cell.truckImage.image = thumbnailImageView.image;
+        cell.truckImage.layer.cornerRadius = 5;
+        cell.truckImage.layer.masksToBounds = true;
+        }];
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.favoritedTrucks.count;
+}
 @end
