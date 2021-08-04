@@ -71,7 +71,6 @@
     [reviewQuery whereKey:@"truckID" equalTo: self.currentTruckViewed.objectId];
     [reviewQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         self.reviewsForTruck = objects;
-        NSLog(@"%lu", objects.count);
         [self.collectionView reloadData];
     }];
 }
@@ -141,6 +140,7 @@
     cell.authorNameLabel.text = [@"@" stringByAppendingString:author.username];
     cell.reviewDescription.text = review.reviewContent;
     cell.starRating.value = [review.score doubleValue];
+    cell.starRating.tintColor = [UIColor colorWithHexString:@"FFFEE5"];
     
     return cell;
     
