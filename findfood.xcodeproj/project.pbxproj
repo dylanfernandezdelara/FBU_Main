@@ -31,6 +31,8 @@
 		6E2851EA26B49FEC00CD6713 /* UserMapNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851E926B49FEC00CD6713 /* UserMapNavigationViewController.m */; };
 		6E2851ED26B7942700CD6713 /* FavoritedTrucksCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851EC26B7942700CD6713 /* FavoritedTrucksCell.m */; };
 		6E2851F326B8B19600CD6713 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851F226B8B19600CD6713 /* Review.m */; };
+		6E2851F626B9A62A00CD6713 /* ComposeReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851F526B9A62A00CD6713 /* ComposeReviewViewController.m */; };
+		6E2851F926B9FD2900CD6713 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2851F826B9FD2900CD6713 /* ReviewCell.m */; };
 		6E4CE82D26A9C9BB00479F2A /* MapFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4CE82C26A9C9BB00479F2A /* MapFiltersViewController.m */; };
 		6E7743EB26A1E4AE00C02DA0 /* FTruckHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743EA26A1E4AE00C02DA0 /* FTruckHoursViewController.m */; };
 		6E7743EE26A7701E00C02DA0 /* FTruckCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7743ED26A7701E00C02DA0 /* FTruckCategoryViewController.m */; };
@@ -102,6 +104,10 @@
 		6E2851EC26B7942700CD6713 /* FavoritedTrucksCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritedTrucksCell.m; sourceTree = "<group>"; };
 		6E2851F126B8B19600CD6713 /* Review.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
 		6E2851F226B8B19600CD6713 /* Review.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
+		6E2851F426B9A62A00CD6713 /* ComposeReviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeReviewViewController.h; sourceTree = "<group>"; };
+		6E2851F526B9A62A00CD6713 /* ComposeReviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeReviewViewController.m; sourceTree = "<group>"; };
+		6E2851F726B9FD2900CD6713 /* ReviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewCell.h; sourceTree = "<group>"; };
+		6E2851F826B9FD2900CD6713 /* ReviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
 		6E4CE82B26A9C9BB00479F2A /* MapFiltersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapFiltersViewController.h; sourceTree = "<group>"; };
 		6E4CE82C26A9C9BB00479F2A /* MapFiltersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapFiltersViewController.m; sourceTree = "<group>"; };
 		6E7743E926A1E4AE00C02DA0 /* FTruckHoursViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTruckHoursViewController.h; sourceTree = "<group>"; };
@@ -234,6 +240,8 @@
 				6E2851E626B49FBE00CD6713 /* UserHomeTabViewController.m */,
 				6E2851E826B49FEC00CD6713 /* UserMapNavigationViewController.h */,
 				6E2851E926B49FEC00CD6713 /* UserMapNavigationViewController.m */,
+				6E2851F426B9A62A00CD6713 /* ComposeReviewViewController.h */,
+				6E2851F526B9A62A00CD6713 /* ComposeReviewViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -245,6 +253,8 @@
 				6E182D3E26A0B9B400E69EBD /* AddressResultsCell.m */,
 				6E2851EB26B7942700CD6713 /* FavoritedTrucksCell.h */,
 				6E2851EC26B7942700CD6713 /* FavoritedTrucksCell.m */,
+				6E2851F726B9FD2900CD6713 /* ReviewCell.h */,
+				6E2851F826B9FD2900CD6713 /* ReviewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -531,10 +541,12 @@
 				6E2851F326B8B19600CD6713 /* Review.m in Sources */,
 				6E01E12E269CF8CB00CAB045 /* AppDelegate.m in Sources */,
 				6E01E13F269CF8CC00CAB045 /* main.m in Sources */,
+				6E2851F626B9A62A00CD6713 /* ComposeReviewViewController.m in Sources */,
 				6E182D19269D0A6C00E69EBD /* ParentSignUpViewController.m in Sources */,
 				6E182D39269F38AF00E69EBD /* FTruckProfileViewController.m in Sources */,
 				6E4CE82D26A9C9BB00479F2A /* MapFiltersViewController.m in Sources */,
 				6E01E131269CF8CB00CAB045 /* SceneDelegate.m in Sources */,
+				6E2851F926B9FD2900CD6713 /* ReviewCell.m in Sources */,
 				6E182D3F26A0B9B400E69EBD /* AddressResultsCell.m in Sources */,
 				6E182D1C269DEB3600E69EBD /* UserMapViewController.m in Sources */,
 				6E2851E726B49FBE00CD6713 /* UserHomeTabViewController.m in Sources */,

@@ -15,9 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *postID;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
+@property (nonatomic, strong) NSString *truckID;
 
 @property (nonatomic, strong) NSString *reviewContent;
 @property (nonatomic, strong) NSNumber *score;
+
++ (void) postReview: (NSString*)reviewDescription withScore: (NSNumber*)score forTruck:(NSString*)truckID withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
 

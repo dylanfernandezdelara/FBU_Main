@@ -12,6 +12,7 @@
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
+@dynamic truckID;
 @dynamic reviewContent;
 @dynamic score;
 
@@ -19,12 +20,13 @@
     return @"Review";
 }
 
-+ (void) postReview: (NSString*)reviewDescription withScore: (NSNumber*)score withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postReview: (NSString*)reviewDescription withScore: (NSNumber*)score forTruck:(NSString*)truckID withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Review *newReview = [Review new];
     newReview.reviewContent = reviewDescription;
     newReview.author = [PFUser currentUser];
     newReview.score = score;
+    newReview.truckID = truckID;
     
     [newReview saveInBackgroundWithBlock: completion];
 }
