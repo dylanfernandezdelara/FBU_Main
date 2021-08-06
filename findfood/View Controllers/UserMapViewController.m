@@ -232,7 +232,7 @@
 
 - (void)setTextLabelsWhenTruckPressed: (PFUser*)pressedTruck {
     self.truckName.text = pressedTruck[@"fullName"];
-    self.truckDescription.text = pressedTruck[@"truckDescription"];
+    self.truckDescription.text = @"press truck for info";
     
     self.sunOpenLabel.text = pressedTruck[@"sunOpenTime"];
     self.monOpenLabel.text = pressedTruck[@"monOpenTime"];
@@ -348,7 +348,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
 
 - (void)isMapDoneMoving:(UIGestureRecognizer*)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-         [self fetchFoodTrucks:self.filterArguments];
+         //[self fetchFoodTrucks:self.filterArguments];
     }
 }
 

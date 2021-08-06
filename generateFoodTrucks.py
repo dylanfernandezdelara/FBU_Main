@@ -15,15 +15,15 @@ template = {
       "truckDescription": "description text",
       "detailsImage": {
         "__type": "File",
-        "name": "8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png",
-        "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/8d2ff83bb95d1baf2fafd81cf1056937_detailsPhoto.png"
+        "name": "6258b7977c841ecbc77b5a48c802a96c_detailsPhoto.png",
+        "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/6258b7977c841ecbc77b5a48c802a96c_detailsPhoto.png"
       },
       "userType": "FoodTruck",
       "fullName": "truck1",
       "Image": {
         "__type": "File",
-        "name": "bef83915e31dd019c7cea8aca25b730f_profilePhoto.png",
-        "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/bef83915e31dd019c7cea8aca25b730f_profilePhoto.png"
+        "name": "3e2e8f324c216ddb6ca12269e32a7f01_profilePhoto.png",
+        "url": "https://parsefiles.back4app.com/KKMFllzbDrpuIx5zW1KoGWfgjx7SvhpnD9QzQNYI/3e2e8f324c216ddb6ca12269e32a7f01_profilePhoto.png"
       },
       "friOpenTime": "08:00",
       "thuOpenTime": "08:00",

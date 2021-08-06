@@ -24,14 +24,19 @@
     [super viewDidLoad];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
+    self.view.backgroundColor = [UIColor colorWithHexString:@"FFFEE5"];
+    
+    [self fetchReviewsForTruck];
 }
 
 - (void)fetchReviewsForTruck {
     PFQuery *getReviews = [Review query];
     PFUser *signedInTruck = [PFUser currentUser];
-    [getReviews whereKey:@"truckID" equalTo:signedInTruck.objectId];
+    [getReviews whereKey:@"truckID" containsString:signedInTruck.objectId];
     [getReviews findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         self.reviewsForTruck = objects;
+        NSLog(@"%lu", objects.count);
         [self.collectionView reloadData];
     }];
 }
@@ -59,6 +64,15 @@
     cell.reviewDescription.text = review.reviewContent;
     cell.starRating.value = [review.score doubleValue];
     cell.starRating.tintColor = [UIColor colorWithHexString:@"FFFEE5"];
+    
+    PFFileObject *temp_file = author[@"Image"];
+    [temp_file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+            UIImageView *thumbnailImageView = [[UIImageView alloc] initWithImage:thumbnailImage];
+            cell.pfpPicture.image = thumbnailImageView.image;
+        cell.pfpPicture.layer.cornerRadius = 5;
+        cell.pfpPicture.layer.masksToBounds = true;
+        }];
     
     return cell;
 }

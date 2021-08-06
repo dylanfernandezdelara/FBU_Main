@@ -68,7 +68,7 @@
                         <outlet property="password" destination="0tZ-UK-Iwv" id="U9p-Di-dYw"/>
                         <outlet property="signUpButton" destination="D32-EI-eTI" id="fRN-bk-G1b"/>
                         <outlet property="username" destination="SiD-qQ-qGK" id="fIr-TU-kSc"/>
-                        <segue destination="PVl-bq-PCQ" kind="show" identifier="loginFoodTruck" id="Hnp-Op-8XX"/>
+                        <segue destination="PVl-bq-PCQ" kind="presentation" identifier="loginFoodTruck" modalPresentationStyle="fullScreen" id="Hnp-Op-8XX"/>
                         <segue destination="34W-ni-AGm" kind="presentation" identifier="loginGeneralUser" modalPresentationStyle="fullScreen" id="ukn-VW-UhU"/>
                     </connections>
                 </viewController>
@@ -264,9 +264,9 @@
         <!--profile-->
         <scene sceneID="hlD-Pg-ZOW">
             <objects>
-                <viewController id="bBa-HE-0dN" customClass="FTruckProfileViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="bBa-HE-0dN" customClass="FTruckProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KUd-CO-a9y">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJ2-rP-a92">
@@ -1022,7 +1022,7 @@
             <objects>
                 <viewController id="y5M-hF-LSM" customClass="FTruckViewReviewsController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmX-gv-uUa">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJX-8c-u2b">
@@ -1035,22 +1035,54 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tbi-7Q-pW8">
                                 <rect key="frame" x="16" y="127" width="358" height="686"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wO7-RF-83N">
-                                    <size key="itemSize" width="208" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wO7-RF-83N">
+                                    <size key="itemSize" width="250" height="128"/>
+                                    <size key="estimatedItemSize" width="250" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wE3-mP-HdT" customClass="ReviewCell">
-                                        <rect key="frame" x="75" y="0.0" width="208" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewCell" id="wE3-mP-HdT" customClass="ReviewCell">
+                                        <rect key="frame" x="54" y="0.0" width="250" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="84z-hq-ng4">
-                                            <rect key="frame" x="0.0" y="0.0" width="208" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dye-lf-WJN">
+                                                    <rect key="frame" x="8" y="8" width="46" height="46"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZw-rn-ccK">
+                                                    <rect key="frame" x="62" y="8" width="180" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NF-it-hAk">
+                                                    <rect key="frame" x="8" y="62" width="234" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27D-wN-wdV" customClass="HCSStarRatingView">
+                                                    <rect key="frame" x="62" y="31" width="87" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="208" height="128"/>
+                                        <size key="customSize" width="250" height="128"/>
+                                        <connections>
+                                            <outlet property="authorNameLabel" destination="mZw-rn-ccK" id="1G5-X7-mkp"/>
+                                            <outlet property="pfpPicture" destination="Dye-lf-WJN" id="mBP-HU-cAx"/>
+                                            <outlet property="reviewDescription" destination="2NF-it-hAk" id="bcY-Ix-c0m"/>
+                                            <outlet property="starRating" destination="27D-wN-wdV" id="Ozh-j1-tgn"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -2244,7 +2276,7 @@
         <segue reference="ucQ-ky-BSJ"/>
         <segue reference="KS1-0d-BZC"/>
         <segue reference="Hnp-Op-8XX"/>
-        <segue reference="Yl6-aF-AAW"/>
+        <segue reference="1yg-qs-Crf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
