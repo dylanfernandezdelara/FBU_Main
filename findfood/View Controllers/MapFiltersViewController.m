@@ -51,9 +51,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // NSLog(@"%@", [NSNumber numberWithBool:self.pizzaFilter.on]);
     self.arrayOfFilters[0] = [NSNumber numberWithBool:self.pizzaFilter.on];
-    // NSLog(@"SHOULD HAVE PIZZA AS 1: %@", self.arrayOfFilters);
     self.arrayOfFilters[1] = [NSNumber numberWithBool:self.bbqFilter.on];
     self.arrayOfFilters[2] = [NSNumber numberWithBool:self.brunchFilter.on];
     self.arrayOfFilters[3] = [NSNumber numberWithBool:self.mexicanFilter.on];

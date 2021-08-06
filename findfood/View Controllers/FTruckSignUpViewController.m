@@ -30,6 +30,10 @@
     [self.view addGestureRecognizer:recognizeTap];
     recognizeTap.cancelsTouchesInView = NO;
     
+    self.descriptionField.layer.borderWidth = 2.0f;
+    self.descriptionField.layer.cornerRadius = 4;
+    self.descriptionField.layer.borderColor = [[UIColor grayColor] CGColor];
+    
     PFUser *currUser =  [PFUser currentUser];
     if (currUser[@"fullName"] != nil && currUser[@"email"] != nil && currUser[@"truckDescription"] != nil && currUser[@"Image"] != nil && currUser[@"detailsImage"] != nil){
         

@@ -12,8 +12,8 @@
 #import "Review.h"
 #import "ComposeReviewViewController.h"
 
-@interface DetailsViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
-
+@interface DetailsViewController ()<ComposeReviewViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+//ComposeReviewViewControllerDelegate
 @property (weak, nonatomic) IBOutlet UIImageView *roundedContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *detailsPhoto;
 
@@ -41,7 +41,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (strong, nonatomic) NSArray *reviewsForTruck;
+@property (strong, nonatomic) NSMutableArray *reviewsForTruck;
  
 @end
 
@@ -70,7 +70,7 @@
     PFQuery *reviewQuery = [Review query];
     [reviewQuery whereKey:@"truckID" equalTo: self.currentTruckViewed.objectId];
     [reviewQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        self.reviewsForTruck = objects;
+        self.reviewsForTruck = [objects mutableCopy];
         [self.collectionView reloadData];
     }];
 }
@@ -150,6 +150,11 @@
     return self.reviewsForTruck.count;
 }
 
+- (void)didWriteReview:(nonnull Review*)review {
+    [self.reviewsForTruck insertObject:review atIndex:0];
+    [self.collectionView reloadData];
+}
+
 
 #pragma mark - Navigation
 
@@ -159,6 +164,8 @@
     if ([segue.identifier isEqualToString:@"segueToComposeReview"]){
         ComposeReviewViewController *composeVC = [segue destinationViewController];
         composeVC.selectedTruckID = self.currentTruckViewed.objectId;
+        composeVC.selectedTruckName = self.currentTruckViewed[@"fullName"];
+        composeVC.delegate = self;
     }
 }
 

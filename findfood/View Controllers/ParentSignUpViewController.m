@@ -25,7 +25,6 @@
     
     PFUser *currUser = [PFUser currentUser];
     if ([currUser[@"userType"] isEqualToString:@"FoodTruck"]){
-        NSLog(@"Truck!");
         self.segmentControl.selectedSegmentIndex = 1;
         [self.segmentControl sendActionsForControlEvents:UIControlEventValueChanged];
         self.segmentControl.alpha = 0.0;

@@ -62,7 +62,7 @@ arrayOfDicts = []
 arrrayOfBool = [True, False]
 
 # change # here to add or remove objects
-numberOfTrucks = 50
+numberOfTrucks = 100
 
 for x in range(numberOfTrucks):
     temp = copy.deepcopy(template)

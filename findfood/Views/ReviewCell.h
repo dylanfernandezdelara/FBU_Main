@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *authorNameLabel;
 @property (weak, nonatomic) IBOutlet HCSStarRatingView *starRating;
 @property (weak, nonatomic) IBOutlet UILabel *reviewDescription;
+@property (weak, nonatomic) IBOutlet UIImageView *pfpPicture;
+@property (weak, nonatomic) IBOutlet UILabel *truckName;
 
 @end
 

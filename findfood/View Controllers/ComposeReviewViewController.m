@@ -8,11 +8,13 @@
 #import "ComposeReviewViewController.h"
 #import "HCSStarRatingView/HCSStarRatingView.h"
 #import "Review.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface ComposeReviewViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet HCSStarRatingView *ratingControl;
 @property (weak, nonatomic) IBOutlet UILabel *characterCountLabel;
 @property (weak, nonatomic) IBOutlet UITextView *reviewDescription;
+@property (weak, nonatomic) IBOutlet UIButton *postReviewButton;
 
 @end
 
@@ -27,6 +29,10 @@
     self.reviewDescription.layer.cornerRadius = 4;
     self.reviewDescription.layer.borderColor = [[UIColor grayColor] CGColor];
     
+    self.postReviewButton.backgroundColor = [UIColor colorWithHexString:@"3B5B33"];
+    self.postReviewButton.tintColor = FlatWhite;
+    self.postReviewButton.layer.cornerRadius = 20;
+    self.postReviewButton.layer.masksToBounds = true;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -46,9 +52,14 @@
 
 - (IBAction)postReviewNow:(UIButton *)sender {
     NSNumber *score = [NSNumber numberWithFloat:self.ratingControl.value];
-    [Review postReview:self.reviewDescription.text withScore:score forTruck:self.selectedTruckID withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Review postReview:self.reviewDescription.text withScore:score forTruck:self.selectedTruckID withName:self.selectedTruckName  withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            NSLog(@"Review saved successfully");
+            Review *newReview = [Review new];
+            newReview.reviewContent = self.reviewDescription.text;
+            newReview.author = [PFUser currentUser];
+            newReview.score = score;
+            newReview.truckID = self.selectedTruckID;
+            [self.delegate didWriteReview:newReview];
         }
     }];
     
